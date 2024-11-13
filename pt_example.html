@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/SortableJS/1.12.0/sortable.min.js"></script> -->
+    <style>
+      .before-move {
+        opacity: 0.8;
+        transition: transform 0.2s ease-in-out;
+      }
+      
+      .after-move {
+        opacity: 1;
+        transition: transform 0.2s ease-in-out;
+      }
+      </style>
+      
+  </head>
+  <body class="flex flex-col min-h-screen">
+
+    <header class="bg-blue-500 z-50 w-full hidden lg:block">
+      <nav class="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="">
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a href="#" class="text-sm/6 font-semibold text-gray-900">Product</a>
+          <a href="#" class="text-sm/6 font-semibold text-gray-900">Features</a>
+          <a href="#" class="text-sm/6 font-semibold text-gray-900">Marketplace</a>
+          <a href="#" class="text-sm/6 font-semibold text-gray-900">Company</a>
+        </div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="#" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </nav>
+    </header>
+    
+
+    <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+      <span class="sr-only">Open sidebar</span>
+      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+      </svg>
+    </button>
+
+    <aside id="default-sidebar" class="fixed top-20 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+      <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+        <ul class="space-y-2 font-medium">
+            <li>
+              <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
+                    <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
+                    <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
+                  </svg>
+                  <span class="ms-3">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="#item-1" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+                    <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"/>
+                  </svg>
+                  <span class="flex-1 ms-3 whitespace-nowrap">Item1</span>
+                  <span class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
+              </a>
+            </li>
+            <li>
+              <a href="#item-2" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z"/>
+                  </svg>
+                  <span class="flex-1 ms-3 whitespace-nowrap">Item2</span>
+                  <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
+              </a>
+            </li>
+            <li>
+              <a href="#item-3" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                    <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"/>
+                  </svg>
+                  <span class="flex-1 ms-3 whitespace-nowrap">Item3</span>
+              </a>
+            </li>
+            <li>
+              <a href="#item-4" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                    <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z"/>
+                  </svg>
+                  <span class="flex-1 ms-3 whitespace-nowrap">Item4</span>
+              </a>
+            </li>
+            <li>
+              <a href="#item-5" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"/>
+                  </svg>
+                  <span class="flex-1 ms-3 whitespace-nowrap">Item5</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.96 2.96 0 0 0 .13 5H5Z"/>
+                    <path d="M6.737 11.061a2.961 2.961 0 0 1 .81-1.515l6.117-6.116A4.839 4.839 0 0 1 16 2.141V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H0v11a1.969 1.969 0 0 0 1.933 2h12.134A1.97 1.97 0 0 0 16 18v-3.093l-1.546 1.546c-.413.413-.94.695-1.513.81l-3.4.679a2.947 2.947 0 0 1-1.85-.227 2.96 2.96 0 0 1-1.635-3.257l.681-3.397Z"/>
+                    <path d="M8.961 16a.93.93 0 0 0 .189-.019l3.4-.679a.961.961 0 0 0 .49-.263l6.118-6.117a2.884 2.884 0 0 0-4.079-4.078l-6.117 6.117a.96.96 0 0 0-.263.491l-.679 3.4A.961.961 0 0 0 8.961 16Zm7.477-9.8a.958.958 0 0 1 .68-.281.961.961 0 0 1 .682 1.644l-.315.315-1.36-1.36.313-.318Zm-5.911 5.911 4.236-4.236 1.359 1.359-4.236 4.237-1.7.339.341-1.699Z"/>
+                  </svg>
+                  <span class="flex-1 ms-3 whitespace-nowrap">Sign Up</span>
+              </a>
+            </li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="flex flex-col flex-grow overflow-hidden p-4 mb-16 sm:ml-64">
+      <div class="flex flex-1 overflow-x-auto">
+        <div id="items-container" class="flex w-full h-full gap-x-4">
+          <div id="item-1" class="item-col hidden bg-gray-300 flex-shrink-0 flex-grow min-w-96 h-fit overflow-y-auto">
+            <h2>Heading item 1</h2>
+            <div class="bg-gray-300  border border-gray-200 divide-y divide-gray-200">
+              <div class=" bg-gray-300 rounded-2xl ring-1 ring-inset ring-gray-800 flex-shrink-0 flex-grow min-w-96 h-fit">
+                <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-white focus:outline-none p-5" data-toggle="answer-1">
+                  <span>task 1</span>
+                  <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
+                </button>
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-1"
+                  style="display: none;">
+                  content
+                </div>
+              </div>
+              <div class=" bg-gray-300 rounded-2xl ring-1 ring-inset ring-gray-800 flex-shrink-0 flex-grow min-w-96 h-fit">
+                <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-white focus:outline-none p-5" data-toggle="answer-2">
+                  <span>task 2</span>
+                  <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
+                </button>
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-2"
+                  style="display: none;">
+                  content
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div id="item" class="item-col flex-shrink-0 flex-grow min-w-96 h-fit overflow-y-auto hidden">
+            <h2>Heading item 1</h2>
+            <div class="bg-gray-300  border border-gray-200 divide-y divide-gray-200">
+              <div class=" bg-gray-300 rounded-2xl ring-1 ring-inset ring-gray-800 flex-shrink-0 flex-grow min-w-96 h-fit">
+                <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-white focus:outline-none p-5" data-toggle="answer-1">
+                  <span>task 1</span>
+                  <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
+                </button>
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-1"
+                  style="display: none;">
+                  content
+                </div>
+              </div>
+              <div class=" bg-gray-300 rounded-2xl ring-1 ring-inset ring-gray-800 flex-shrink-0 flex-grow min-w-96 h-fit">
+                <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-white focus:outline-none p-5" data-toggle="answer-2">
+                  <span>task 2</span>
+                  <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
+                </button>
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-2"
+                  style="display: none;">
+                  content
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="item-2" class="item-col  hidden bg-gray-300 flex-shrink-0 flex-grow min-w-96 h-fit  border border-gray-200 divide-y divide-gray-200">
+            <h2>Heading item 2</h2>
+            <div class="bg-gray-300  border border-gray-200 divide-y divide-gray-200">
+              <div class=" bg-gray-300 rounded-2xl ring-1 ring-inset ring-gray-800 flex-shrink-0 flex-grow min-w-96 h-fit">
+                <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-white focus:outline-none p-5" data-toggle="answer-3">
+                  <span>task 1</span>
+                  <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
+                </button>
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-3"
+                  style="display: none;">
+                  content
+                </div>
+              </div>
+              <div class=" bg-gray-300 rounded-2xl ring-1 ring-inset ring-gray-800 flex-shrink-0 flex-grow min-w-96 h-fit">
+                <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-white focus:outline-none p-5" data-toggle="answer-4">
+                  <span>task 2</span>
+                  <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
+                </button>
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-4"
+                  style="display: none;">
+                  content
+                </div>
+              </div>
+              <div class=" bg-gray-300 rounded-2xl ring-1 ring-inset ring-gray-800 flex-shrink-0 flex-grow min-w-96 h-fit">
+                <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-white focus:outline-none p-5" data-toggle="answer-12">
+                  <span>task 2</span>
+                  <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
+                </button>
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-12"
+                  style="display: none;">
+                  content
+                </div>
+              </div>
+              <div class=" bg-gray-300 rounded-2xl ring-1 ring-inset ring-gray-800 flex-shrink-0 flex-grow min-w-96 h-fit">
+                <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-white focus:outline-none p-5" data-toggle="answer-13">
+                  <span>task 2</span>
+                  <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
+                </button>
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-13"
+                  style="display: none;">
+                  content
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="item-3" class="item-col hidden bg-gray-300 flex-shrink-0 flex-grow min-w-96 h-fit  border border-gray-200 divide-y divide-gray-200">
+            <h2>Heading item 3</h2>
+            <div class="bg-gray-300  border border-gray-200 divide-y divide-gray-200">
+              <div class=" bg-gray-300 rounded-2xl ring-1 ring-inset ring-gray-800 flex-shrink-0 flex-grow min-w-96 h-fit">
+                <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-white focus:outline-none p-5" data-toggle="answer-5">
+                  <span>task 1</span>
+                  <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
+                </button>
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-5"
+                  style="display: none;">
+                  content
+                </div>
+              </div>
+              <div class=" bg-gray-300 rounded-2xl ring-1 ring-inset ring-gray-800 flex-shrink-0 flex-grow min-w-96 h-fit">
+                <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-white focus:outline-none p-5" data-toggle="answer-6">
+                  <span>task 2</span>
+                  <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
+                </button>
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-6"
+                  style="display: none;">
+                  content
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="item-4" class="item-col  hidden bg-gray-300 flex-shrink-0 flex-grow min-w-96 h-fit  border border-gray-200 divide-y divide-gray-200">
+            <h2>Heading item 4</h2>
+            <div class="bg-gray-300  border border-gray-200 divide-y divide-gray-200">
+              <div class=" bg-gray-300 rounded-2xl ring-1 ring-inset ring-gray-800 flex-shrink-0 flex-grow min-w-96 h-fit">
+                <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-white focus:outline-none p-5" data-toggle="answer-7">
+                  <span>task 1</span>
+                  <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
+                </button>
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-7"
+                  style="display: none;">
+                  content
+                </div>
+              </div>
+              <div class=" bg-gray-300 rounded-2xl ring-1 ring-inset ring-gray-800 flex-shrink-0 flex-grow min-w-96 h-fit">
+                <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-white focus:outline-none p-5" data-toggle="answer-8">
+                  <span>task 2</span>
+                  <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
+                </button>
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-8"
+                  style="display: none;">
+                  content
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="item-5" class="item-col hidden bg-gray-300 flex-shrink-0 flex-grow min-w-96 h-fit  border border-gray-200 divide-y divide-gray-200">
+            <h2>Heading item 5</h2>
+            <div class="bg-gray-300  border border-gray-200 divide-y divide-gray-200">
+              <div class=" bg-gray-300 rounded-2xl ring-1 ring-inset ring-gray-800 flex-shrink-0 flex-grow min-w-96 h-fit">
+                <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-white focus:outline-none p-5" data-toggle="answer-9">
+                  <span>task 1</span>
+                  <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
+                </button>
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-9"
+                  style="display: none;">
+                  content
+                </div>
+              </div>
+              <div class=" bg-gray-300 rounded-2xl ring-1 ring-inset ring-gray-800 flex-shrink-0 flex-grow min-w-96 h-fit">
+                <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-white focus:outline-none p-5" data-toggle="answer-10">
+                  <span>task 2</span>
+                  <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
+                </button>
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-10"
+                  style="display: none;">
+                  content
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </main>
+    <footer class="fixed bottom-0 z-40 w-full bg-gray-200 py-4 text-center text-blue-500">
+      Made by <a href="#" class="text-black" target="_blank">SasaV</a>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const sidebarLinks = document.querySelectorAll('#default-sidebar ul li a');
+        const mainContents = document.querySelectorAll('.item-col');
+
+        sidebarLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetContent = document.querySelector(targetId);
+
+            // Toggle visibility of the selected content
+            targetContent.classList.toggle('hidden');
+          });
+        });
+
+        const buttons = document.querySelectorAll('.question-btn');
+
+        buttons.forEach(button => {
+          button.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-toggle');
+            const target = document.getElementById(targetId);
+            const isExpanded = target.style.display === 'block';
+
+            if (isExpanded) {
+              target.style.display = 'none';
+              this.querySelector('.arrow-down').classList.remove('rotate-180');
+            } else {
+              target.style.display = 'block';
+              this.querySelector('.arrow-down').classList.add('rotate-180');
+            }
+          });
+        });
+
+        // drag and drop
+        const container = document.getElementById('items-container');
+  
+        // Initialize Sortable.js
+        new Sortable(container, {
+          animation: 350,
+          chosenClass: "shadow-2xl",
+          handle: ".question-btn", // Make buttons draggable
+          swap: true,
+          swapClass: {
+            before: "before-move",
+            after: "after-move"
+          }
+        });
+
+        // Initialize Sortable.js for each item
+        Array.from(document.querySelectorAll('.item-col')).forEach(item => {
+          new Sortable(item, {
+            animation: 350,
+            chosenClass: "shadow-2xl",
+            handle: ".question-btn",
+            swap: true,
+            swapClass: {
+              before: "before-move",
+              after: "after-move"
+            }
+          });
+        });
+      });
+      </script>
+  </body>
+</html>
+
+
