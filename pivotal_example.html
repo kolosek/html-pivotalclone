@@ -10,6 +10,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontSize: {
+              'xxs': '0.65rem',
+            },
+          },
+        },
+      }
+    </script>
     <style>
       body {
         font-family: "Open Sans", sans-serif;
@@ -181,30 +192,77 @@
                   </div>
                 </div>
                 <div class="answer text-sm lg:text-base font-light" id="answer-1" style="display: none;">
-                  <div class="bg-slate-100 question-btn cursor-pointer w-full items-start text-left px-3.5 py-2.5 hover:bg-slate-200" data-toggle="answer-1">
-                    <section id="story-edit" class="flex items-start justify-between">
-                      <div class="flex items-start flex-grow gap-x-4">
-                        <div class="flex items-center gap-x-1">
-                          <svg class="h-6 w-6 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z"/>  
-                            <polyline points="6 15 12 9 18 15" />
-                          </svg>
+                  <div class="bg-slate-100 question-btn w-full items-start text-left px-3.5 py-2.5 hover:bg-slate-200" data-toggle="answer-1">
+                    <div class="main-edit-wrapper flex flex-col gap-y-3.5">
+                      <section id="story-edit" class="flex items-start justify-between">
+                        <div class="flex items-start flex-grow gap-x-4">
+                          <div class="flex items-center gap-x-1">
+                            <svg class="h-6 w-6 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z"/>
+                              <polyline points="6 15 12 9 18 15" />
+                            </svg>
+                          </div>
+                          <div class="flex flex-grow mr-4">
+                            <textarea name="text" rows="1" class="w-full p-2 resize-none" oninput="this.style.height = ''; this.style.height = this.scrollHeight +'px'">Task 1 with some looooong text text text text</textarea>
+                          </div>
                         </div>
-                        <div class="flex flex-grow mr-4">
-                          <textarea name="text" rows="1" class="w-full p-2 resize-none" oninput="this.style.height = ''; this.style.height = this.scrollHeight +'px'">Task 1 with some looooong text text text text</textarea>
+                        <div class="flex items-center gap-x-2">
+                          <button type="button" class="rounded bg-white shadow-sm h-6 w-6">
+                            <svg class="m-1 h-fit w-fit text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <polyline points="15 3 21 3 21 9" />
+                              <polyline points="9 21 3 21 3 15" />
+                              <line x1="21" y1="3" x2="14" y2="10" />
+                              <line x1="3" y1="21" x2="10" y2="14" />
+                            </svg>
+                          </button>
                         </div>
-                      </div>
-                      <div class="flex items-center gap-x-2">
-                        <button type="button" class="rounded bg-white shadow-sm h-6 w-6">
-                          <svg class="m-1 h-fit w-fit text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  
-                            <polyline points="15 3 21 3 21 9" />
-                            <polyline points="9 21 3 21 3 15" />  
-                            <line x1="21" y1="3" x2="14" y2="10" />  
-                            <line x1="3" y1="21" x2="10" y2="14" />
-                          </svg>
-                        </button>
-                      </div>
-                    </section>
+                      </section>
+                      <section id="story-actions">
+                        <div class="flex items-center gap-x-2">
+                          <div class="flex items-center">
+                            <button class="flex justify-center items-center bg-slate-50 border border-gray-300 hover:bg-white h-6 w-6">
+                              <svg class="h-4 w-4 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+                                <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+                              </svg>
+                            </button>
+                            <button class="flex justify-center items-center bg-slate-50 border border-gray-300 hover:bg-white text-xxs/5 font-normal h-6 w-6">ID</button>
+                            <input readonly value="#123456789" class="h-6 w-20 px-2 border border-gray-300 text-xs font-normal"></input>
+                          </div>
+                          <div class="flex items-center">
+                            <button class="flex justify-center items-center bg-slate-50 border border-gray-300 hover:bg-white h-6 w-6">
+                              <svg class="h-4 w-4 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <rect x="8" y="8" width="12" height="12" rx="2" />
+                                <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2" />
+                              </svg>
+                            </button>
+                            <button class="flex justify-center items-center bg-slate-50 border border-gray-300 hover:bg-white h-6 w-6">
+                              <svg class="h-4 w-4 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
+                                <path stroke="none" d="M0 0h24v24H0z"/>  
+                                <polyline points="12 8 12 12 14 14" />  
+                                <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" />
+                              </svg>
+                            </button>
+                            <button class="flex justify-center items-center bg-slate-50 border border-gray-300 hover:bg-white h-6 w-6">
+                              <svg class="h-4 w-4 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  
+                                <polyline points="3 6 5 6 21 6" />  
+                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />  
+                                <line x1="10" y1="11" x2="10" y2="17" />  
+                                <line x1="14" y1="11" x2="14" y2="17" />
+                              </svg>
+                            </button>
+                          </div>
+                          <div>
+                            <button type="button" id="save-and-collapse" class="flex items-center rounded bg-blue-500 shadow-sm text-xs text-white font-medium px-6 h-6">
+                              Collapse
+                            </button>
+                          </div>
+                        </div>
+                      </section>
+                      
+                    </div>
                   </div>
                 </div>
 
