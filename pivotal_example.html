@@ -7,15 +7,23 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+    </style>
   </head>
   <body class="flex flex-col min-h-screen">
 
     <header class="bg-blue-500 z-50 w-full hidden lg:block">
       <nav class="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
-          <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="">
+          <a href="/" class="-m-1.5 p-1.5">
+            <span class="sr-only">Logo</span>
+            <img class="h-8" src="images/pivotalclone-logo.png" alt="logo">
           </a>
         </div>
         <div class="flex lg:hidden">
@@ -117,34 +125,62 @@
     <main class="flex flex-col flex-grow overflow-hidden p-4 mb-16 sm:ml-64">
       <div class="flex flex-1 overflow-x-auto">
         <div id="items-container" class="flex w-full h-full gap-x-4">
-          <div id="item-1" class="item-col bg-gray-300 flex-shrink-0 flex-grow min-w-96 h-fit overflow-y-auto">
-            <div id="header" class="flex justify-between items-center h-11 bg-gray-700">
+          <div id="item-1" class="item-col flex-shrink-0 flex-grow min-w-96 max-w-screen-md h-fit overflow-y-auto">
+            <div id="header" class="flex justify-between items-center rounded-t h-11 bg-gray-700">
               <div class="flex pl-3.5 pr-2.5">
                 <h2 class="text-base text-white">Current Iteration</h2>
-                <div id="velocity" class="pl-2">
+                <div id="velocity" class="pl-2.5 flex items-center gap-x-2">
                   <svg class="h-5 w-5 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="3 17 9 11 13 15 21 7" />  <polyline points="14 7 21 7 21 14" /></svg>
+                  <span class="text-gray-500">54</span>
                 </div>
                 
               </div>
-              <div class="flex items-center gap-x-2.5">
-                <svg class="h-8 w-8 text-gray-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <line x1="12" y1="5" x2="12" y2="19" />  <line x1="5" y1="12" x2="19" y2="12" /></svg>
-                <h2 class="text-base text-white">Add Story</h2>
-                <svg class="h-8 w-8 text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
-                </svg>
+              <div class="flex items-center gap-x-2.5 px-2">
+                <a href="#" class="flex items-center gap-x-2">
+                  <svg  viewBox="0 0 24 24" class="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                  <span class="text-base text-white">Add Story</span>
+                </a>
                 
-                <svg class="h-8 w-8 text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>                
+                
+                <a href="#" class="h-7 w-7 text-gray-500">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+                  </svg>
+                </a>
+                
+                <a href="#" class="h-7 w-7 text-gray-500">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                  </svg>  
+                </a>
               </div>
             </div>
-            <div class="bg-gray-300  border border-gray-200 divide-y divide-gray-200">
-              <div class=" bg-gray-300 rounded-2xl ring-1 ring-inset ring-gray-800 flex-shrink-0 flex-grow min-w-96 h-fit">
-                <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-white focus:outline-none p-5" data-toggle="answer-1">
-                  <img src="https://assets.pivotaltracker.com/next/assets/next/b88d6960-feature.png" class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
-                  <span>task 1</span>
+            <div class="flex flex-col divide-y divide-gray-200">
+              <div class="bg-yellow-100">
+                <div class="question-btn cursor-pointer w-full items-start rounded-lg text-left text-xl font-normal text-white focus:outline-none px-2 py-2" data-toggle="answer-1">
+                  <div class="flex items-start justify-between">
+                    <div class="flex items-start gap-x-4">
+                      <div class="flex items-center gap-x-1">
+                        <img src="images/icon-star.png" class="h-5 w-5" alt="">
+                        <span id="task-points" class="w-6 text-black text-center text-xs">3</span>
+                      </div>
+                      <div class="flex flex-col">
+                        <span class="text-black text-wrap text-sm">Task 1 with some looooong text text text text <span class="uppercase text-blue-500"> (sv)</span></span>
+                        <div id="task-tag" class="">
+                          <span class="italic text-sm font-semibold text-emerald-500">test_tag</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                      <button type="button" class="rounded bg-orange-600 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-orange-500">Button</button>
+                      <input id="checkbox" aria-describedby="checkbox-description" name="checkbox" type="checkbox" class="size-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                    </div>
+                  </div>
                   
-                </button>
+                </div>
                 <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-1"
                   style="display: none;">
                   <div class="story model item description comments story_188562877 c12156 feature p3 delivered point_scale_custom iteration_99 estimate_1 is_estimatable not_collapsed" data-cid="c12156" data-id="188562877"><div id="view12165" data-scrollable="true" class="edit details"><div class=""><section class="edit" data-aid="StoryDetailsEdit" aria-expanded="true" tabindex="-1"><section class="model_details"><form class="story model" action="#"><section class="story_or_epic_header"><button class="autosaves collapser top top_collapser story_collapser_c9792" tabindex="0" aria-label="Save and collapse" title="Save and collapse"></button><fieldset class="name"><div class="AutosizeTextarea___2iWScFt6"><div class="AutosizeTextarea__container___31scfkZp"><textarea aria-label="story title" data-aid="name" data-focus-id="NameEdit--c12156" class="AutosizeTextarea__textarea___1LL2IPEy NameEdit___2W_xAa_R" name="story[name]">Fix usetiful loading</textarea></div><div aria-hidden="true" class="AutosizeTextarea__shadowClass___34L-ruqt NameEdit___2W_xAa_R"><span>Fix usetiful loading</span><span>w</span></div></div></fieldset><a href="/story/show/188562877" type="button" class="autosaves maximize hoverable" id="story_maximize_c9792" tabindex="-1" title="Switch to a full page view of this story"></a></section><aside><div class="wrapper"><nav class="edit"><section class="controls "><div class="persistence use_click_to_copy"><button class="autosaves button std close" type="submit" id="story_close_c12156" tabindex="-1" title="Save &amp; collapse">Collapse</button></div><div class="actions"><div class="bubble"></div><button type="button" title="Copy this story's link to your clipboard" id="story_copy_link_c12156" data-clipboard-text="https://www.pivotaltracker.com/story/show/188562877" data-clipboard-meta-text="Fix usetiful loading" class="autosaves clipboard_button link left_endcap hoverable" tabindex="-1"></button><div class="button_with_field"><button type="button" title="Copy this story's ID to your clipboard" id="story_copy_id_c12156" data-clipboard-text="#188562877" class="autosaves clipboard_button id hoverable use_click_to_copy" tabindex="-1"></button><input type="text" readonly="" class="autosaves id text_value" id="story_copy_id_value_c12156" aria-label="story id" value="#188562877"></div><button type="button" title="Clone this story" class="autosaves clone_story left_endcap hoverable" id="story_clone_button_c12156" tabindex="-1"></button><button type="button" title="View the history of this story" class="autosaves history capped hoverable" id="story_history_button_c12156" tabindex="-1"></button><button type="button" title="Delete this story" class="autosaves delete right_endcap hoverable" id="story_delete_button_c12156" tabindex="-1"></button></div></section></nav><div class="info_box_wrapper"><div class="story state_box"><div class="state row"><div class="StoryState___2vkCAl9L" data-aid="StoryState"><em>State</em><span class="state"><button data-aid="StateButton" type="button" data-destination-state="accept" class="state button accept">Accept</button><button data-aid="StateButton" type="button" data-destination-state="reject" class="state button reject">Reject</button></span><div class="Dropdown StoryState__dropdown___3GU-2fu0"><div class="Dropdown__content" data-aid="StoryState__dropdown"><button class="SMkCk__Button _3INnV__Button--default Dropdown__button StoryState__dropdownButton___LdR9Y07L" tabindex="0" type="button"><span class="StoryState__dropdown--label___3qsLBfq3" data-aid="StoryState__dropdown--label"><span>Delivered</span><img src="//assets.pivotaltracker.com/next/assets/next/0ca71001-arrow-light.svg" alt=""></span></button></div></div></div></div><div class="reviews"><div class="Reviews___3RL2ODu6" data-aid="Reviews"><div class="Reviews__controls___2HDGtk0b"><div class="Reviews__label___3eZCCaQO">Reviews</div><div class="Dropdown"><div class="Dropdown__content" data-aid="Reviews__addReview"><button class="SMkCk__Button _3INnV__Button--default Dropdown__button Reviews__addReview___2qS8cLCf" aria-label="Reviews" type="button"><span class="Reviews__addReview--plus___1RlRoYng">+</span><span>&nbsp;add review</span></button></div></div></div><div></div></div></div></div><div class="story info_box"><div class="info"><div class="type row">
