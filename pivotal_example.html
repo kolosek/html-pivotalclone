@@ -560,6 +560,76 @@
                           </div>
                         </div>
                       </section>
+                      <section id="story-blockers">
+                        <div id="blockers-wrapper" class="flex flex-col">
+                          <div id="blockers-header">
+                            <p class="uppercase font-bold text-xs">Blockers</p>
+                          </div>
+                          <div id="blocker-stories" class="bg-stone-200 rounded mt-2">
+                            <button class="flex items-center text-neutral-500 text-xs py-3 px-2">
+                              <svg class="h-4 w-4 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                              </svg>
+                              Add blocker or impediment
+                            </button>
+                          </div>
+                        </div>
+                      </section>
+                      <!-- TO DO - after click show tabs on top and options on bottom -->
+                      <section id="story-description">
+                        <div id="description-wrapper" class="flex flex-col">
+                          <div id="description-header">
+                            <p class="uppercase font-bold text-xs">description</p>
+                          </div>
+                          <div id="story-description" class="rounded mt-2">
+                            <textarea name="text" rows="1" class="w-full p-2 resize-none text-xs" oninput="this.style.height = ''; this.style.height = this.scrollHeight +'px'">Task 1 with some looooong text text text text</textarea>
+                          </div>
+                        </div>
+                      </section>
+                      <section id="story-labels">
+                        <div id="description-wrapper" class="flex flex-col text-xs">
+                          <div id="description-header">
+                            <p class="uppercase font-bold">labels</p>
+                          </div>
+                          <div class="rounded mt-2 p-2 flex bg-white">
+                            <div class="flex-grow">
+                              <input type="text" placeholder="Add a label" class="w-full">
+                            </div>
+                            <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
+                              <input type="checkbox" id="story-labels" class="hidden absolute" data-dropdown-toggle>
+                              <label for="story-labels" class="flex items-center cursor-pointer">
+                                <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                              </label>
+                              <div id="labelsboxmenu" class="absolute mt-1 -right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
+                                <ul class="block text-xs text-neutral-600">
+                                  <li>
+                                    <a href="#" class="flex items-center w-64 px-2 leading-8 text-emerald-500 hover:bg-gray-200">
+                                      <img src="images/label.svg" alt="" class="mr-2">
+                                      rubyci
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="#" class="flex items-center w-64 px-2 leading-8 text-emerald-500 hover:bg-gray-200">
+                                      <img src="images/epic.svg" alt="" class="mr-2">
+                                      epic_label
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="#" class="flex items-center w-64 px-2 leading-8 text-emerald-500 hover:bg-gray-200">
+                                      <img src="images/label.svg" alt="" class="mr-2">
+                                      fastci
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
                     </div>
                   </div>
                 </div>
