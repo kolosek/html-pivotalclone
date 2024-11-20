@@ -24,6 +24,15 @@
     <style>
       body {
         font-family: "Open Sans", sans-serif;
+        font-weight: 400;
+      }
+    </style>
+    <style>
+      #story-set-state:checked ~ #stateboxmenu {
+        /* display: block; */
+      }
+      #story-review:checked ~ #reviewboxmenu {
+        /* display: block; */
       }
     </style>
   </head>
@@ -191,7 +200,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="answer text-sm lg:text-base font-light" id="answer-1" style="display: none;">
+                <div class="answer text-sm lg:text-base" id="answer-1" style="display: none;">
                   <div class="bg-slate-100 question-btn w-full items-start text-left px-3.5 py-2.5 hover:bg-slate-200" data-toggle="answer-1">
                     <div class="main-edit-wrapper flex flex-col gap-y-3.5">
                       <section id="story-edit" class="flex items-start justify-between">
@@ -261,7 +270,93 @@
                           </div>
                         </div>
                       </section>
-                      
+                      <section id="story-info">
+                        <div class="flex flex-row-reverse justify-end flex-wrap items-start gap-x-2">
+                          <div class="flex flex-col w-72 border border-stone-300">
+                            <div class="px-2.5 h-7">
+                              <div class="flex items-center h-full">
+                                <p class="uppercase text-xs text-neutral-600">State</p>
+                                <span class="flex flex-grow justify-end items-center">
+                                  <button type="button" id="story-next-status" class="flex items-center rounded bg-amber-500 shadow-sm text-xs/6 text-white px-2 font-medium">
+                                    Deliver
+                                  </button>
+                                </span>
+
+                                <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
+                                  <input type="checkbox" id="story-set-state" class="hidden absolute" data-dropdown-toggle>
+                                  <label for="story-set-state" class="flex items-center space-x-1 cursor-pointer">
+                                    <span id="story-current-state" class="text-xs">Finished</span>
+                                    <svg class="h-2 w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                  </label>
+                                  <div id="stateboxmenu" class="absolute mt-1 right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
+                                    <ul class="block text-xs text-neutral-600 w-24">
+                                      <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Unstarted</a></li>
+                                      <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Started</a></li>
+                                      <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Finished</a></li>
+                                      <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Delivered</a></li>
+                                      <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Rejected</a></li>
+                                      <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Accepted</a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="px-2.5 h-7">
+                              <div class="flex items-center justify-between h-full">
+                                <p class="uppercase text-xs text-neutral-600">Reviews</p>
+                                
+                                <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
+                                  <input type="checkbox" id="story-review" class="hidden absolute" data-dropdown-toggle>
+                                  <label for="story-review" class="flex items-center space-x-1 cursor-pointer">
+                                    <span id="story-current-state" class="text-xxs text-blue-600">+ add review</span>
+                                  </label>
+                                  <div id="reviewboxmenu" class="absolute mt-1 right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
+                                    <ul class="block text-sm text-neutral-600">
+                                      <li class="block px-3 leading-9 opacity-60">Select review type</li>
+                                      <li><a href="#" class="block px-3 leading-9 hover:bg-gray-200">Staging QA</a></li>
+                                      <li><a href="#" class="block px-3 leading-9 hover:bg-gray-200">Production QA</a></li>
+                                      <li><a href="#" class="block px-3 leading-9 hover:bg-gray-200">Development QA</a></li>
+                                      <li><a href="#" class="block px-3 leading-9 hover:bg-gray-200 text-blue-600 mt-2 border-t border-stone-300">Manage Review Types</a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="story-info" class="flex flex-col w-72 border border-stone-300">
+                            <div class="px-2.5 h-7">
+                              <div class="flex items-center h-full">
+                                <p class="uppercase text-xs text-neutral-600">Story type</p>
+                                <span class="flex flex-grow justify-end items-center">
+                                  <button type="button" id="story-next-status" class="flex items-center rounded bg-amber-500 shadow-sm text-xs/6 text-white px-2 font-medium">
+                                    Deliver
+                                  </button>
+                                </span>
+
+                                <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
+                                  <input type="checkbox" id="story-set-state" class="hidden absolute" data-dropdown-toggle>
+                                  <label for="story-set-state" class="flex items-center space-x-1 cursor-pointer">
+                                    <span id="story-current-state" class="text-xs">Feature</span>
+                                    <svg class="h-2 w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                  </label>
+                                  <div id="stateboxmenu" class="absolute mt-1 right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
+                                    <ul class="block text-xs text-neutral-600 w-24">
+                                      <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Feature</a></li>
+                                      <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Bug</a></li>
+                                      <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Chore</a></li>
+                                      <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Release</a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
                     </div>
                   </div>
                 </div>
@@ -273,7 +368,7 @@
                   <span>task 2</span>
                   <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
                 </button>
-                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-2"
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white" id="answer-2"
                   style="display: none;">
                   content
                 </div>
@@ -289,7 +384,7 @@
                   <span>task 1</span>
                   <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
                 </button>
-                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-1"
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white" id="answer-1"
                   style="display: none;">
                   content
                 </div>
@@ -299,7 +394,7 @@
                   <span>task 2</span>
                   <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
                 </button>
-                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-2"
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white" id="answer-2"
                   style="display: none;">
                   content
                 </div>
@@ -315,7 +410,7 @@
                   <span>task 1</span>
                   <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
                 </button>
-                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-3"
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white" id="answer-3"
                   style="display: none;">
                   content
                 </div>
@@ -325,7 +420,7 @@
                   <span>task 2</span>
                   <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
                 </button>
-                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-4"
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white" id="answer-4"
                   style="display: none;">
                   content
                 </div>
@@ -335,7 +430,7 @@
                   <span>task 2</span>
                   <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
                 </button>
-                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-12"
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white" id="answer-12"
                   style="display: none;">
                   content
                 </div>
@@ -345,7 +440,7 @@
                   <span>task 2</span>
                   <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
                 </button>
-                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-13"
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white" id="answer-13"
                   style="display: none;">
                   content
                 </div>
@@ -361,7 +456,7 @@
                   <span>task 1</span>
                   <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
                 </button>
-                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-5"
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white" id="answer-5"
                   style="display: none;">
                   content
                 </div>
@@ -371,7 +466,7 @@
                   <span>task 2</span>
                   <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
                 </button>
-                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-6"
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white" id="answer-6"
                   style="display: none;">
                   content
                 </div>
@@ -387,7 +482,7 @@
                   <span>task 1</span>
                   <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
                 </button>
-                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-7"
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white" id="answer-7"
                   style="display: none;">
                   content
                 </div>
@@ -397,7 +492,7 @@
                   <span>task 2</span>
                   <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
                 </button>
-                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-8"
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white" id="answer-8"
                   style="display: none;">
                   content
                 </div>
@@ -413,7 +508,7 @@
                   <span>task 1</span>
                   <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
                 </button>
-                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-9"
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white" id="answer-9"
                   style="display: none;">
                   content
                 </div>
@@ -423,7 +518,7 @@
                   <span>task 2</span>
                   <img  class="mt-1.5 md:mt-0 flex-shrink-0  h-9 w-9 text-white" alt="">
                 </button>
-                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white font-light" id="answer-10"
+                <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-white" id="answer-10"
                   style="display: none;">
                   content
                 </div>
@@ -502,8 +597,39 @@
             }
           });
         });
+        
+
+        document.querySelectorAll('[data-dropdown-trigger]').forEach(trigger => {
+          const toggle = trigger.querySelector('[data-dropdown-toggle]');
+          const content = trigger.querySelector('[data-dropdown-content]');
+          
+          // Handle click on the trigger
+          trigger.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent bubbling
+            toggle.checked = !toggle.checked;
+            if (toggle.checked) {
+              content.classList.remove('hidden');
+            } else {
+              content.classList.add('hidden');
+            }
+          });
+
+          // Handle click outside
+          document.addEventListener('click', function(event) {
+            if (!trigger.contains(event.target) && !content.contains(event.target)) {
+              closeDropdown(trigger);
+            }
+          }, true); // Use capture phase to detect clicks outside
+
+          function closeDropdown(trigger) {
+            const toggle = trigger.querySelector('[data-dropdown-toggle]');
+            const content = trigger.querySelector('[data-dropdown-content]');
+            toggle.checked = false;
+            content.classList.add('hidden');
+          }
+        });
       });
-      </script>
+    </script>
   </body>
 </html>
 
