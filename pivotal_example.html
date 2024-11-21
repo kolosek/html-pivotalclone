@@ -567,7 +567,7 @@
                           </div>
                           <div id="blocker-stories" class="bg-stone-200 rounded mt-2">
                             <button class="flex items-center text-neutral-500 text-xs py-3 px-2">
-                              <svg class="h-4 w-4 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <svg class="h-4 w-4 text-gray-500 mr-2"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z"/>
                                 <line x1="12" y1="5" x2="12" y2="19" />
                                 <line x1="5" y1="12" x2="19" y2="12" />
@@ -589,8 +589,8 @@
                         </div>
                       </section>
                       <section id="story-labels">
-                        <div id="description-wrapper" class="flex flex-col text-xs">
-                          <div id="description-header">
+                        <div id="labels-wrapper" class="flex flex-col text-xs">
+                          <div id="labels-header">
                             <p class="uppercase font-bold">labels</p>
                           </div>
                           <div class="rounded mt-2 py-3 px-2 flex bg-white">
@@ -631,8 +631,8 @@
                         </div>
                       </section>
                       <section id="story-code">
-                        <div id="description-wrapper" class="flex flex-col text-xs">
-                          <div id="description-header">
+                        <div id="code-wrapper" class="flex flex-col text-xs">
+                          <div id="code-header">
                             <p class="uppercase font-bold">code</p>
                           </div>
                           <div class="rounded mt-2 py-3 px-2 flex bg-white">
@@ -640,6 +640,24 @@
                               <input type="text" placeholder="Paste link to pull request or branch..." class="w-full leading-4 outline-none">
                             </div>
                           </div>
+                        </div>
+                      </section>
+                      <section id="story-tasks">
+                        <div id="tasks-wrapper" class="flex flex-col text-xs">
+                          <div id="tasks-header">
+                            <p class="uppercase font-bold">Tasks (<span id="done-tasks">1</span>/<span>3</span>)</p>
+                          </div>
+                          <div id="add-story-tasks" class="bg-stone-200 rounded mt-2">
+                            <button class="flex items-center text-neutral-500 py-3 px-2">
+                              <svg class="h-4 w-4 text-gray-500 mr-2"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                              </svg>
+                              Add a task
+                            </button>
+                          </div>
+                          <!-- TO DO - add script and div to show input and add task on click -->
                         </div>
                       </section>
                     </div>
