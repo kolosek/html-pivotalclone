@@ -645,7 +645,7 @@
                       <section id="story-tasks">
                         <div id="tasks-wrapper" class="flex flex-col text-xs">
                           <div id="tasks-header">
-                            <p class="uppercase font-bold">Tasks (<span id="done-tasks">1</span>/<span>3</span>)</p>
+                            <p class="uppercase font-bold">Tasks (<span id="done-tasks">1</span>/<span id="tasks-count">3</span>)</p>
                           </div>
                           <div id="add-story-tasks" class="bg-stone-200 rounded mt-2">
                             <button class="flex items-center text-neutral-500 py-3 px-2">
@@ -658,6 +658,45 @@
                             </button>
                           </div>
                           <!-- TO DO - add script and div to show input and add task on click -->
+                        </div>
+                      </section>
+                      <section id="story-activity">
+                        <div id="activity-wrapper" class="flex flex-col text-xs pb-6">
+                          <div id="activity-header">
+                            <p class="uppercase font-bold">Tasks (<span id="done-tasks">1</span>/<span id="tasks-count">3</span>)</p>
+                          </div>
+                          <div id="add-story-activity" class="bg-neutral-100 rounded border border-stone-300 mt-2">
+                            <div class="relative rounded mx-auto mt-2">
+                              <div class="absolute right-2 top-3">
+                                <a href="#" class="text-blue-500">Formating help</a>
+                              </div>
+                              <!-- Tabs -->
+                              <ul id="tabs" class="inline-flex pt-2 px-1 w-full border-b">
+                                <li class="bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px"><a id="default-tab" href="#first">Write</a></li>
+                                <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#second">Preview</a></li>
+                              </ul>
+                            
+                              <!-- Tab Contents -->
+                              <div id="tab-contents">
+                                <div id="first" class="p-4 bg-white">
+                                  write content
+                                </div>
+                                <div id="second" class="hidden p-4 bg-white">
+                                  preview content
+                                </div>
+                                <div id="activity-actions" class="p-4 bg-white">
+                                  <div>
+                                    <a class="cursor-pointer">
+                                      <img src="images/icon-mention.svg" alt="">
+                                    </a>
+                                  </div>
+                                  <div>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </section>
                     </div>
@@ -930,6 +969,34 @@
             toggle.checked = false;
             content.classList.add('hidden');
           }
+        });
+
+        // activity hendler
+        let tabsContainer = document.querySelector("#tabs");
+
+        let tabTogglers = tabsContainer.querySelectorAll("#tabs a");
+
+        console.log(tabTogglers);
+
+        tabTogglers.forEach(function(toggler) {
+          toggler.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            let tabName = this.getAttribute("href");
+
+            let tabContents = document.querySelector("#tab-contents");
+
+            for (let i = 0; i < tabContents.children.length; i++) {
+              
+              tabTogglers[i].parentElement.classList.remove("border-t", "border-r", "border-l", "-mb-px", "bg-white");  tabContents.children[i].classList.remove("hidden");
+              if ("#" + tabContents.children[i].id === tabName) {
+                continue;
+              }
+              tabContents.children[i].classList.add("hidden");
+              
+            }
+            e.target.parentElement.classList.add("border-t", "border-r", "border-l", "-mb-px", "bg-white");
+          });
         });
       });
     </script>
