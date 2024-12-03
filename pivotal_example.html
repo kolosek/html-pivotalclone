@@ -35,32 +35,73 @@
   </head>
   <body class="flex flex-col min-h-screen">
 
-    <header class="bg-blue-500 z-50 w-full hidden lg:block">
-      <nav class="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <div class="flex lg:flex-1">
-          <a href="/" class="-m-1.5 p-1.5">
-            <span class="sr-only">Logo</span>
-            <img class="h-8" src="images/pivotalclone-logo.png" alt="logo">
-          </a>
+    <header class="bg-cyan-800 z-50 w-full p-2 flex flex-col gap-y-2 text-slate-300">
+      <nav class="flex items-center justify-between" aria-label="Global">
+        <div class="flex">
+          <div class="flex gap-x-2">
+            <a href="/" class="-m-1.5 p-1.5">
+              <span class="sr-only">Logo</span>
+              <img class="h-6" src="images/logo-pt.png" alt="logo">
+            </a>
+            <div class="flex items-center">
+              <button>Project Name</button>
+              <svg class="h-4 w-4 ml-2 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
+                <path stroke="none" d="M0 0h24v24H0z"/>  
+                <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
+              </svg>
+            </div>
+          </div>
+          
         </div>
-        <div class="flex lg:hidden">
-          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-            <span class="sr-only">Open main menu</span>
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        <div class="flex gap-x-4">
+          <button class="relative">
+            <svg class="h-6 w-6"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
+              <path stroke="none" d="M0 0h24v24H0z"/>  
+              <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /> 
+              <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
             </svg>
+            <span id="notification_count" class="absolute top-0 -right-1 bg-red-400 text-white px-0.5" style="font-size: 9px;">
+              34
+            </span>
           </button>
-        </div>
-        <div class="hidden lg:flex lg:gap-x-12">
-          <a href="#" class="text-sm/6 font-semibold text-gray-900">Product</a>
-          <a href="#" class="text-sm/6 font-semibold text-gray-900">Features</a>
-          <a href="#" class="text-sm/6 font-semibold text-gray-900">Marketplace</a>
-          <a href="#" class="text-sm/6 font-semibold text-gray-900">Company</a>
-        </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+          <a href="#" class="text-xs/6 uppercase flex items-center gap-x-2">
+            What's new
+            <svg class="h-4 w-4 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
+              <path stroke="none" d="M0 0h24v24H0z"/>  
+              <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
+            </svg>
+          </a>
+          <a href="#" class="text-xs/6 uppercase flex items-center gap-x-2">
+            Help
+            <svg class="h-4 w-4 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
+              <path stroke="none" d="M0 0h24v24H0z"/>  
+              <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
+            </svg>
+          </a>
+          <div class="flex">
+            <a href="#" id="logged_user" class="text-xs/6 uppercase flex items-center gap-x-2">
+              Log in
+              <svg class="h-4 w-4 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
+                <path stroke="none" d="M0 0h24v24H0z"/>  
+                <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
+              </svg>
+            </a>
+          </div>
         </div>
       </nav>
+      <div class="flex gap-x-2">
+        <a href="#" class="text-xs/6 uppercase">Stories</a>
+        <a href="#" class="text-xs/6 uppercase">Analytics</a>
+        <a href="#" class="text-xs/6 uppercase">Members</a>
+        <a href="#" class="text-xs/6 uppercase">Integrations</a>
+        <a href="#" class="text-xs/6 uppercase">More</a>
+        <button>
+          <svg class="h-4 w-4 text-slate-300"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  
+            <polyline points="17 11 12 6 7 11" /> 
+            <polyline points="17 18 12 13 7 18" />
+          </svg>
+        </button>
+      </div>
     </header>
 
 
