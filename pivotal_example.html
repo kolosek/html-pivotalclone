@@ -36,19 +36,25 @@
   <body class="flex flex-col h-screen">
 
     <header class="bg-cyan-800 z-50 w-full p-2 pb-0 flex flex-col gap-y-2 text-slate-300">
-      <nav class="flex items-center justify-between" aria-label="Global">
+      <nav class="flex items-center justify-between pb-2" aria-label="Global">
         <div class="flex">
           <div class="flex gap-x-2">
             <a href="/" class="-m-1.5 p-1.5">
               <span class="sr-only">Logo</span>
               <img class="h-6" src="images/logo-pt.png" alt="logo">
             </a>
-            <div class="">
+            <div class="flex items-center">
               <button class="flex items-center">
                 Project Name
                 <svg class="h-4 w-4 ml-2 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"/>
                   <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
+                </svg>
+              </button>
+              <button id="open-collapsable-nav-links" class="ml-6 flex items-center hidden">
+                <svg class="h-4 w-4 text-slate-300 hover:text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
+                  <polyline points="17 11 12 6 7 11" />
+                  <polyline points="17 18 12 13 7 18" />
                 </svg>
               </button>
             </div>
@@ -105,13 +111,13 @@
           </div>
         </div>
       </nav>
-      <div class="flex gap-x-2">
-        <a href="#" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-slate-400 hover:text-white"><span>Stories</span></a>
-        <a href="#" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase hover:text-white"><span>Analytics</span></a>
-        <a href="#" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase hover:text-white"><span>Members</span></a>
-        <a href="#" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase hover:text-white"><span>Integrations</span></a>
-        <a href="#" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase hover:text-white"><span>More</span></a>
-        <button class="pb-2 flex items-center">
+      <div id="collapsable-nav-links" class="flex gap-x-2">
+        <a href="#" aria-selected="true" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>Stories</span></a>
+        <a href="#" aria-selected="false" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>Analytics</span></a>
+        <a href="#" aria-selected="false" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>Members</span></a>
+        <a href="#" aria-selected="false" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>Integrations</span></a>
+        <a href="#" aria-selected="false" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>More</span></a>
+        <button id="close-collapsable-nav-links" class="pb-2 flex items-center">
           <svg class="h-4 w-4 text-slate-300 hover:text-white ml-2 pb-0.5"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
             <polyline points="17 11 12 6 7 11" />
             <polyline points="17 18 12 13 7 18" />
@@ -1063,6 +1069,48 @@
               // this.classList.add('hidden');
             }
           });
+        });
+
+        // handle nav links
+        const collapsableNavLinks = document.getElementById('collapsable-nav-links');
+
+        // collapse bottomNavLinks
+        const closeBtn = document.getElementById('close-collapsable-nav-links');
+        const openBtn = document.getElementById('open-collapsable-nav-links');
+
+        closeBtn.addEventListener('click', function() {
+            collapsableNavLinks.classList.toggle('hidden');
+            openBtn.classList.toggle('hidden');
+            closeBtn.classList.toggle('hidden');
+        });
+
+        openBtn.addEventListener('click', function() {
+            collapsableNavLinks.classList.toggle('hidden');
+            openBtn.classList.toggle('hidden');
+            closeBtn.classList.toggle('hidden');
+        });
+
+        // handle style on open links
+        collapsableNavLinks.addEventListener('click', function(event) {
+          console.log(event.target.tagName);
+          if (event.target.tagName === 'A' || event.target.closest('a') !== null) {
+            event.preventDefault();
+
+            // Find the closest anchor tag
+            let anchor = event.target.closest('a');
+            if (!anchor) return;
+
+            // Toggle aria-selected on the anchor tag
+            anchor.setAttribute('aria-selected', 'true');
+
+            // Set others to false
+            const siblings = collapsableNavLinks.querySelectorAll('a');
+            siblings.forEach(sibling => {
+                if (sibling !== anchor) {
+                    sibling.setAttribute('aria-selected', 'false');
+                }
+            });
+          }
         });
 
         // drag and drop
