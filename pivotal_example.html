@@ -35,7 +35,7 @@
   </head>
   <body class="flex flex-col min-h-screen">
 
-    <header class="bg-cyan-800 z-50 w-full p-2 flex flex-col gap-y-2 text-slate-300">
+    <header class="bg-cyan-800 z-50 w-full p-2 pb-0 flex flex-col gap-y-2 text-slate-300">
       <nav class="flex items-center justify-between" aria-label="Global">
         <div class="flex">
           <div class="flex gap-x-2">
@@ -43,46 +43,62 @@
               <span class="sr-only">Logo</span>
               <img class="h-6" src="images/logo-pt.png" alt="logo">
             </a>
-            <div class="flex items-center">
-              <button>Project Name</button>
-              <svg class="h-4 w-4 ml-2 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
-                <path stroke="none" d="M0 0h24v24H0z"/>  
-                <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
-              </svg>
+            <div class="">
+              <button class="flex items-center">
+                Project Name
+                <svg class="h-4 w-4 ml-2 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"/>
+                  <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
+                </svg>
+              </button>
             </div>
           </div>
-          
+
         </div>
         <div class="flex gap-x-4">
           <button class="relative">
-            <svg class="h-6 w-6"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
-              <path stroke="none" d="M0 0h24v24H0z"/>  
-              <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /> 
+            <svg class="h-6 w-6"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z"/>
+              <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
               <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
             </svg>
             <span id="notification_count" class="absolute top-0 -right-1 bg-red-400 text-white px-0.5" style="font-size: 9px;">
               34
             </span>
           </button>
+
+          <form class="mx-auto bg-slate-200 text-xs rounded">
+            <label for="default-search" class="mb-2  sr-only">Search project</label>
+            <div class="relative flex items-center">
+              <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg>
+              </div>
+              <input type="search" id="default-search" class="block w-full bg-transparent p-1 pl-10 pr-10 border rounded" placeholder="Search project" />
+              <button id="search-help" class="absolute right-0 px-2 py-2 text-slate-400">?</button>
+            </div>
+          </form>
+
           <a href="#" class="text-xs/6 uppercase flex items-center gap-x-2">
             What's new
-            <svg class="h-4 w-4 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
-              <path stroke="none" d="M0 0h24v24H0z"/>  
+            <svg class="h-4 w-4 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z"/>
               <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
             </svg>
           </a>
           <a href="#" class="text-xs/6 uppercase flex items-center gap-x-2">
             Help
-            <svg class="h-4 w-4 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
-              <path stroke="none" d="M0 0h24v24H0z"/>  
+            <svg class="h-4 w-4 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z"/>
               <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
             </svg>
           </a>
           <div class="flex">
             <a href="#" id="logged_user" class="text-xs/6 uppercase flex items-center gap-x-2">
               Log in
-              <svg class="h-4 w-4 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
-                <path stroke="none" d="M0 0h24v24H0z"/>  
+              <svg class="h-4 w-4 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
                 <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
               </svg>
             </a>
@@ -90,14 +106,14 @@
         </div>
       </nav>
       <div class="flex gap-x-2">
-        <a href="#" class="text-xs/6 uppercase">Stories</a>
-        <a href="#" class="text-xs/6 uppercase">Analytics</a>
-        <a href="#" class="text-xs/6 uppercase">Members</a>
-        <a href="#" class="text-xs/6 uppercase">Integrations</a>
-        <a href="#" class="text-xs/6 uppercase">More</a>
-        <button>
-          <svg class="h-4 w-4 text-slate-300"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  
-            <polyline points="17 11 12 6 7 11" /> 
+        <a href="#" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-slate-400 hover:text-white"><span>Stories</span></a>
+        <a href="#" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase hover:text-white"><span>Analytics</span></a>
+        <a href="#" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase hover:text-white"><span>Members</span></a>
+        <a href="#" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase hover:text-white"><span>Integrations</span></a>
+        <a href="#" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase hover:text-white"><span>More</span></a>
+        <button class="pb-2 flex items-center">
+          <svg class="h-4 w-4 text-slate-300 hover:text-white ml-2 pb-0.5"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
+            <polyline points="17 11 12 6 7 11" />
             <polyline points="17 18 12 13 7 18" />
           </svg>
         </button>
@@ -716,7 +732,7 @@
                                 <li class="bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px"><a id="default-tab" href="#first">Write</a></li>
                                 <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#second">Preview</a></li>
                               </ul>
-                            
+
                               <!-- Tab Contents -->
                               <div id="tab-contents">
                                 <div id="first" class="p-4 bg-white">
@@ -1028,13 +1044,13 @@
             let tabContents = document.querySelector("#tab-contents");
 
             for (let i = 0; i < tabContents.children.length; i++) {
-              
+
               tabTogglers[i].parentElement.classList.remove("border-t", "border-r", "border-l", "-mb-px", "bg-white");  tabContents.children[i].classList.remove("hidden");
               if ("#" + tabContents.children[i].id === tabName) {
                 continue;
               }
               tabContents.children[i].classList.add("hidden");
-              
+
             }
             e.target.parentElement.classList.add("border-t", "border-r", "border-l", "-mb-px", "bg-white");
           });
