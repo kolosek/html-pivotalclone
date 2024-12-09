@@ -45,7 +45,7 @@
             </a>
             <div class="flex items-center">
               <button class="flex items-center">
-                Project Name
+                Hello World
                 <svg class="h-4 w-4 ml-2 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"/>
                   <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
@@ -62,7 +62,7 @@
 
         </div>
         <div class="flex gap-x-4">
-          <button class="relative">
+          <button class="relative hidden">
             <svg class="h-6 w-6"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z"/>
               <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
@@ -73,7 +73,7 @@
             </span>
           </button>
 
-          <form class="mx-auto bg-slate-200 text-xs rounded">
+          <form class="mx-auto bg-slate-200 text-xs rounded hidden">
             <label for="default-search" class="mb-2  sr-only">Search project</label>
             <div class="relative flex items-center">
               <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -86,14 +86,14 @@
             </div>
           </form>
 
-          <a href="#" class="text-xs/6 uppercase flex items-center gap-x-2">
+          <a href="#" class="text-xs/6 uppercase flex items-center gap-x-2 hidden">
             What's new
             <svg class="h-4 w-4 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z"/>
               <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
             </svg>
           </a>
-          <a href="#" class="text-xs/6 uppercase flex items-center gap-x-2">
+          <a href="#" class="text-xs/6 uppercase flex items-center gap-x-2 hidden">
             Help
             <svg class="h-4 w-4 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z"/>
@@ -102,7 +102,7 @@
           </a>
           <div class="flex">
             <a href="#" id="logged_user" class="text-xs/6 uppercase flex items-center gap-x-2">
-              Log in
+              Sasa_V
               <svg class="h-4 w-4 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z"/>
                 <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
@@ -115,9 +115,9 @@
         <a href="#" aria-selected="true" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>Stories</span></a>
         <a href="#" aria-selected="false" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>Analytics</span></a>
         <a href="#" aria-selected="false" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>Members</span></a>
-        <a href="#" aria-selected="false" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>Integrations</span></a>
-        <a href="#" aria-selected="false" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>More</span></a>
-        <button id="close-collapsable-nav-links" class="pb-2 flex items-center">
+        <a href="#" aria-selected="false" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white hidden"><span>Integrations</span></a>
+        <a href="#" aria-selected="false" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white hidden"><span>More</span></a>
+        <button id="close-collapsable-nav-links" class="pb-2 flex items-center hidden">
           <svg class="h-4 w-4 text-slate-300 hover:text-white ml-2 pb-0.5"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
             <polyline points="17 11 12 6 7 11" />
             <polyline points="17 18 12 13 7 18" />
@@ -213,7 +213,7 @@
               </span>
             </a>
           </li>
-          <li aria-selected="false" class="pr-3 border-l-4 border-l-transparent aria-selected:border-l-blue-300 aria-selected:text-blue-300">
+          <li aria-selected="false" class="pr-3 border-l-4 border-l-transparent aria-selected:border-l-blue-300 aria-selected:text-blue-300 hidden">
             <a href="#item-6" class="flex items-center p-2 group">
               <svg class="w-5"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z"/>
@@ -254,7 +254,7 @@
               </span>
             </a>
           </li>
-          <li aria-selected="false" class="pr-3 border-l-4 border-l-transparent aria-selected:border-l-blue-300 aria-selected:text-blue-300">
+          <li aria-selected="false" class="pr-3 border-l-4 border-l-transparent aria-selected:border-l-blue-300 aria-selected:text-blue-300 hidden">
             <a href="#item-6" class="flex items-center p-2 group">
               <svg class="w-5"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z"/>
@@ -336,7 +336,7 @@
             </div>
             <div class="flex flex-col divide-y divide-gray-200">
               <div id="done-task-1" class="task-wrapper">
-                <div class="bg-yellow-100 question-btn cursor-pointer w-full items-start px-2 py-2" data-toggle="task-1">
+                <div class="bg-yellow-100 task-btn cursor-pointer w-full items-start px-2 py-2" data-toggle="task-1">
                   <div class="flex items-start justify-between">
                     <div class="flex items-start gap-x-4">
                       <div class="flex items-center gap-x-1">
@@ -901,7 +901,7 @@
             </div>
             <div class="flex flex-col divide-y divide-gray-200">
               <div id="current-task-1" class="task-wrapper">
-                <div class="bg-yellow-100 question-btn cursor-pointer w-full items-start px-2 py-2" data-toggle="task-2">
+                <div class="bg-yellow-100 task-btn cursor-pointer w-full items-start px-2 py-2" data-toggle="task-2">
                   <div class="flex items-start justify-between">
                     <div class="flex items-start gap-x-4">
                       <div class="flex items-center gap-x-1">
@@ -1466,7 +1466,7 @@
             </div>
             <div class="flex flex-col divide-y divide-gray-200">
               <div id="backlog-task-1" class="task-wrapper">
-                <div class="bg-yellow-100 question-btn cursor-pointer w-full items-start px-2 py-2" data-toggle="task-3">
+                <div class="bg-yellow-100 task-btn cursor-pointer w-full items-start px-2 py-2" data-toggle="task-3">
                   <div class="flex items-start justify-between">
                     <div class="flex items-start gap-x-4">
                       <div class="flex items-center gap-x-1">
@@ -2031,7 +2031,7 @@
             </div>
             <div class="flex flex-col divide-y divide-gray-200">
               <div id="my_work-task-1" class="task-wrapper">
-                <div class="bg-yellow-100 question-btn cursor-pointer w-full items-start px-2 py-2" data-toggle="task-5">
+                <div class="bg-yellow-100 task-btn cursor-pointer w-full items-start px-2 py-2" data-toggle="task-5">
                   <div class="flex items-start justify-between">
                     <div class="flex items-start gap-x-4">
                       <div class="flex items-center gap-x-1">
@@ -2596,7 +2596,7 @@
             </div>
             <div class="flex flex-col divide-y divide-gray-200">
               <div id="icebox-task-1" class="task-wrapper">
-                <div class="bg-yellow-100 question-btn cursor-pointer w-full items-start px-2 py-2" data-toggle="task-4">
+                <div class="bg-yellow-100 task-btn cursor-pointer w-full items-start px-2 py-2" data-toggle="task-4">
                   <div class="flex items-start justify-between">
                     <div class="flex items-start gap-x-4">
                       <div class="flex items-center gap-x-1">
@@ -3150,7 +3150,7 @@
         });
 
         // handle collapse task
-        const buttons = document.querySelectorAll('.question-btn');
+        const buttons = document.querySelectorAll('.task-btn');
         const collapseButtons = document.querySelectorAll('.save-and-collapse');
 
         buttons.forEach(button => {
@@ -3236,7 +3236,7 @@
         new Sortable(container, {
           animation: 350,
           chosenClass: "shadow-2xl",
-          handle: ".question-btn", // Make buttons draggable
+          handle: ".task-btn", // Make buttons draggable
           swap: true,
           swapClass: {
             before: "before-move",
@@ -3249,7 +3249,7 @@
           new Sortable(item, {
             animation: 350,
             chosenClass: "shadow-2xl",
-            handle: ".question-btn",
+            handle: ".task-btn",
             swap: true,
             swapClass: {
               before: "before-move",
