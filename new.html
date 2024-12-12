@@ -134,6 +134,76 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="mx-auto max-w-2xl flex justify-center pt-9">
       <img src="images/dev_pivotal_example-video-to-gif-converter.gif" class="rounded" alt="">
     </div>
+    <section id="pricing-faq" class="mx-auto max-w-md py-16">
+      <div class="flex items-center justify-center flex-col gap-y-2 py-5">
+        <h2 class="text-3xl font-medium text-gray-900">Frequent asked questions</h2>
+        <p class="text-center text-base tracking-normal text-zinc-500">Everything you need to know about the Wait template. Find answers to the most common questions below.</p>
+      </div>
+      <div class="w-full px-7 md:px-10 xl:px-2 py-4">
+        <div class="mx-auto w-full">
+          <div class="mb-4 rounded-2xl bg-zinc-50">
+            <button class="question-btn flex w-full items-center gap-x-5 justify-between rounded text-left text-base font-light text-black focus:outline-none p-3" data-toggle="answer-1">
+              <span>What if I am building open-source?</span>
+              <svg class="h-6 w-6 text-zinc-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </button>
+            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light" id="answer-1"
+              style="display: none;">Answer</div>
+          </div>
+          <div class="mb-4 rounded-2xl bg-zinc-50">
+            <button class="question-btn flex w-full items-center gap-x-5 justify-between rounded text-left text-base font-light text-black focus:outline-none p-3" data-toggle="answer-2">
+              <span>What are concurrent job runs?</span>
+              <svg class="h-6 w-6 text-zinc-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </button>
+            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light" id="answer-2"
+              style="display: none;">Answer</div>
+          </div>
+          <div class="mb-4 rounded-2xl bg-zinc-50">
+            <button class="question-btn flex w-full items-center gap-x-5 justify-between rounded text-left text-base font-light text-black focus:outline-none p-3" data-toggle="answer-3">
+              <span>What if I am building open-source?</span>
+              <svg class="h-6 w-6 text-zinc-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </button>
+            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light" id="answer-3"
+              style="display: none;">Answer</div>
+          </div>
+          <div class="mb-4 rounded-2xl bg-zinc-50">
+            <button class="question-btn flex w-full items-center gap-x-5 justify-between rounded text-left text-base font-light text-black focus:outline-none p-3" data-toggle="answer-4">
+              <span>What are concurrent job runs?</span>
+              <svg class="h-6 w-6 text-zinc-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </button>
+            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light" id="answer-4"
+              style="display: none;">Answer</div>
+          </div>
+          <div class="mb-4 rounded-2xl bg-zinc-50">
+            <button class="question-btn flex w-full items-center gap-x-5 justify-between rounded text-left text-base font-light text-black focus:outline-none p-3" data-toggle="answer-5">
+              <span>What if I am building open-source?</span>
+              <svg class="h-6 w-6 text-zinc-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </button>
+            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light" id="answer-5"
+              style="display: none;">Answer</div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   
 
@@ -168,16 +238,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     let seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
     if (days < 10) {
-    days = `0${days}`;
+      days = `0${days}`;
     }
     if (hours < 10) {
-    hours = `0${hours}`;
+      hours = `0${hours}`;
     }
     if (minutes < 10) {
-    minutes = `0${minutes}`;
+      minutes = `0${minutes}`;
     }
     if (seconds < 10) {
-    seconds = `0${seconds}`;
+      seconds = `0${seconds}`;
     }
 
     // Get elements by class name
@@ -185,25 +255,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     // Loop through the elements and update their content
     for (let i = 0; i < countdownElements.length; i++) {
-    let className = countdownElements[i].classList[1]; // Get the second class name
-    switch (className) {
-      case "days":
-        countdownElements[i].innerHTML = days;
-        break;
-      case "hours":
-        countdownElements[i].innerHTML = hours;
-        break;
-      case "minutes":
-        countdownElements[i].innerHTML = minutes;
-        break;
-      case "seconds":
-        countdownElements[i].innerHTML = seconds;
-        break;
-      default:
-        break;
-    }
-    }
+      let className = countdownElements[i].classList[1]; // Get the second class name
+      switch (className) {
+        case "days":
+          countdownElements[i].innerHTML = days;
+          break;
+        case "hours":
+          countdownElements[i].innerHTML = hours;
+          break;
+        case "minutes":
+          countdownElements[i].innerHTML = minutes;
+          break;
+        case "seconds":
+          countdownElements[i].innerHTML = seconds;
+          break;
+        default:
+          break;
+      }
+      }
     }, 1000);
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.question-btn');
+
+        buttons.forEach(button => {
+          button.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-toggle');
+            const target = document.getElementById(targetId);
+            const isExpanded = target.style.display === 'block';
+
+            if (isExpanded) {
+              target.style.display = 'none';
+              this.querySelector('.arrow-down').classList.remove('rotate-180');
+            } else {
+              target.style.display = 'block';
+              this.querySelector('.arrow-down').classList.add('rotate-180');
+            }
+          });
+        });
+      });
     </script>
 </body>
 </html>
