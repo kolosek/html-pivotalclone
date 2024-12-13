@@ -240,7 +240,7 @@
             </a>
           </li>
           <li aria-selected="false" class="pr-3 border-l-4 border-l-transparent aria-selected:border-l-blue-300 aria-selected:text-blue-300">
-            <a href="#item-6" class="flex items-center p-2 group">
+            <a href="#labels-tasks" class="flex items-center p-2 group">
               <svg class="w-5"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z"/>
                 <line x1="5" y1="5" x2="5" y2="21" />
@@ -3375,6 +3375,167 @@
               </div> <!-- end id="my_work-task-1" -->
             </div>
           </div> <!-- END my_work section -->
+
+          <!-- labels column -->
+          <div id="labels-tasks" class="item-col flex-shrink-0 flex-grow min-w-96 max-w-screen-xl overflow-y-auto hidden">
+            <div id="header" class="flex justify-between items-center rounded-t h-11 bg-gray-700">
+              <div class="flex pl-3.5 pr-2.5">
+                <h2 class="text-base text-white">Labels</h2>
+              </div>
+              <div class="flex items-center gap-x-2.5 px-2">
+                <a href="#" class="flex items-center gap-x-2">
+                  <svg  viewBox="0 0 24 24" class="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                  <span class="text-base text-white">Add Label</span>
+                </a>
+                <a href="#" class="h-7 w-7 text-gray-500">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+                  </svg>
+                </a>
+                <a href="#" class="h-7 w-7 text-gray-500">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-gray-200 overflow-y-auto">
+              <div>
+                <div class="text-sm lg:text-base">
+                  <div class="bg-zinc-100 w-full items-start text-left pt-2.5 pb-32">
+                    <div id="label-wrapper" class="flex flex-col text-xs">
+                      <div class="group cursor-pointer rounded mt-2 py-3 px-5 flex border-t border-t-neutral-200 hover:bg-white">
+                        <div class="flex-grow flex">
+                          <img src="images/label.svg" alt="" class="h-4 w-4 mr-2">
+                          <p class="leading-4 text-emerald-500 font-bold outline-none">label_1</p>
+                          <p class="leading-4 text-emerald-500 font-bold outline-none">(<span id="label-count">4</span>)</p>
+                        </div>
+                        <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
+                          <input type="checkbox" id="current-label" class="hidden absolute" data-dropdown-toggle>
+                          <label for="current-label" class="flex items-center cursor-pointer text-white group-hover:text-inidgo-500">
+                            <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </label>
+                          <div id="labelsboxmenu" class="absolute mt-1 -right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
+                            <ul class="block text-xs text-neutral-600">
+                              <li>
+                                <a href="#" class="flex items-center w-64 px-2 leading-8 hover:bg-gray-200">
+                                  Delete
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center w-64 px-2 leading-8 hover:bg-gray-200">
+                                  <!-- <img src="images/epic.svg" alt="" class="mr-2"> -->
+                                  Rename
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center w-64 px-2 leading-8 hover:bg-gray-200">
+                                  Show Stories
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center w-64 px-2 leading-8 hover:bg-gray-200">
+                                  Convert to Epic
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div> <!-- end label 1 -->
+                    <div id="label-wrapper" class="flex flex-col text-xs">
+                      <div class="group cursor-pointer rounded mt-2 py-3 px-5 flex border-t border-t-neutral-200 hover:bg-white">
+                        <div class="flex-grow flex">
+                          <img src="images/label.svg" alt="" class="h-4 w-4 mr-2">
+                          <p class="leading-4 text-emerald-500 outline-none">label_2</p>
+                          <p class="leading-4 text-emerald-500 font-bold outline-none hidden">(<span id="label-count">4</span>)</p>
+                        </div>
+                        <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
+                          <input type="checkbox" id="current-label" class="hidden absolute" data-dropdown-toggle>
+                          <label for="current-label" class="flex items-center cursor-pointer text-white group-hover:text-inidgo-500">
+                            <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </label>
+                          <div id="labelsboxmenu" class="absolute mt-1 -right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
+                            <ul class="block text-xs text-neutral-600">
+                              <li>
+                                <a href="#" class="flex items-center w-64 px-2 leading-8 hover:bg-gray-200">
+                                  Delete
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center w-64 px-2 leading-8 hover:bg-gray-200">
+                                  <!-- <img src="images/epic.svg" alt="" class="mr-2"> -->
+                                  Rename
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center w-64 px-2 leading-8 hover:bg-gray-200">
+                                  Show Stories
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center w-64 px-2 leading-8 hover:bg-gray-200">
+                                  Convert to Epic
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div> <!-- end label 2 -->
+                    <div id="label-wrapper" class="flex flex-col text-xs">
+                      <div class="group cursor-pointer rounded mt-2 py-3 px-5 flex border-t border-t-neutral-200 hover:bg-white">
+                        <div class="flex-grow flex">
+                          <img src="images/epic.svg" alt="" class="h-4 w-4 mr-2">
+                          <p class="leading-4 text-purple-700 font-bold outline-none">epic_label_3</p>
+                          <p class="leading-4 text-purple-700 font-bold outline-none hidden">(<span id="label-count">4</span>)</p>
+                        </div>
+                        <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
+                          <input type="checkbox" id="current-label" class="hidden absolute" data-dropdown-toggle>
+                          <label for="current-label" class="flex items-center cursor-pointer text-white group-hover:text-inidgo-500">
+                            <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </label>
+                          <div id="labelsboxmenu" class="absolute mt-1 -right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
+                            <ul class="block text-xs text-neutral-600">
+                              <li>
+                                <a href="#" class="flex items-center w-64 px-2 leading-8 hover:bg-gray-200">
+                                  Delete
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center w-64 px-2 leading-8 hover:bg-gray-200">
+                                  Rename
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center w-64 px-2 leading-8 hover:bg-gray-200">
+                                  Show Stories
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center w-64 px-2 leading-8 hover:bg-gray-200">
+                                  Convert to Epic
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div> <!-- end epic_label_3 -->
+                  </div>
+                </div>
+              </div> 
+            </div>
+          </div> <!-- end labels column -->
         </div>
       </div>
 
