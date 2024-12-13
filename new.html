@@ -62,7 +62,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="pb-12">
           <img class="h-11" src="images/pivotalclone-logo.png" alt="logo">
         </div>
-  
+
         <div class="flex items-center text-xs p-1 px-4 rounded-full ring-1 ring-slate-400">
           <div class="h-3 w-3 rounded-full bg-lime-400"></div>
           <p class="uppercase text-neutral-900 ml-4">Available in early 2025</p>
@@ -73,7 +73,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="pt-9">
           <p class="text-center text-base tracking-normal text-zinc-500">Be amongst the first to experience Wait and launch a viral waitlist. Sign up to be notified when we launch!</p>
         </div>
-        <div class="w-full pt-9">
+        <div id="subscribe-form" class="w-full pt-9">
           <svg id="subscribed-checkmark" class="absolute h-8 w-8 text-green-500 z-10 right-0 sm:-left-8 top-1 sm:top-2 hidden"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M5 12l5 5l10 -10" /></svg>
           <div id="ml-embeded-form" class="ml-embedded w-full" data-form="SJgMbV">
           </div>
@@ -134,7 +134,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="mx-auto max-w-2xl flex justify-center pt-9">
       <img src="images/dev_pivotal_example-video-to-gif-converter.gif" class="rounded" alt="">
     </div>
-    <section id="pricing-faq" class="mx-auto max-w-md py-16">
+    <section id="faq-section" class="mx-auto max-w-md py-16">
       <div class="flex items-center justify-center flex-col gap-y-2 py-5">
         <h2 class="text-3xl font-medium text-gray-900">Frequent asked questions</h2>
         <p class="text-center text-base tracking-normal text-zinc-500">Everything you need to know about the Wait template. Find answers to the most common questions below.</p>
@@ -142,70 +142,86 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="w-full px-7 md:px-10 xl:px-2 py-4">
         <div class="mx-auto w-full">
           <div class="mb-4 rounded-2xl bg-zinc-50">
-            <button class="question-btn flex w-full items-center gap-x-5 justify-between rounded text-left text-base font-light text-black focus:outline-none p-3" data-toggle="answer-1">
-              <span>What if I am building open-source?</span>
+            <button class="question-btn flex w-full items-center gap-x-5 justify-between rounded text-left text-base font-normal text-gray-900 focus:outline-none p-3" data-toggle="answer-1">
+              <span>Do You support inetgrations with other platforms?</span>
               <svg class="h-6 w-6 text-zinc-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z"/>
                 <line x1="12" y1="5" x2="12" y2="19" />
                 <line x1="5" y1="12" x2="19" y2="12" />
               </svg>
             </button>
-            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light" id="answer-1"
-              style="display: none;">Answer</div>
+            <div class="answer p-3 text-sm lg:text-base text-zinc-500 font-normal" id="answer-1" style="display: none;">
+              Yes, we support plenty of platforms, e.g. GitHub, Slack, Jira and many others.
+            </div>
           </div>
           <div class="mb-4 rounded-2xl bg-zinc-50">
-            <button class="question-btn flex w-full items-center gap-x-5 justify-between rounded text-left text-base font-light text-black focus:outline-none p-3" data-toggle="answer-2">
-              <span>What are concurrent job runs?</span>
+            <button class="question-btn flex w-full items-center gap-x-5 justify-between rounded text-left text-base font-normal text-gray-900 focus:outline-none p-3" data-toggle="answer-2">
+              <span>Is there integrations with time tracking platforms?</span>
               <svg class="h-6 w-6 text-zinc-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z"/>
                 <line x1="12" y1="5" x2="12" y2="19" />
                 <line x1="5" y1="12" x2="19" y2="12" />
               </svg>
             </button>
-            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light" id="answer-2"
-              style="display: none;">Answer</div>
+            <div class="answer p-3 text-sm lg:text-base text-zinc-500 font-normal" id="answer-2" style="display: none;">
+              Yes, there is many of them, e.g. Everhour, HubStaff etc.
+            </div>
           </div>
           <div class="mb-4 rounded-2xl bg-zinc-50">
-            <button class="question-btn flex w-full items-center gap-x-5 justify-between rounded text-left text-base font-light text-black focus:outline-none p-3" data-toggle="answer-3">
-              <span>What if I am building open-source?</span>
+            <button class="question-btn flex w-full items-center gap-x-5 justify-between rounded text-left text-base font-normal text-gray-900 focus:outline-none p-3" data-toggle="answer-3">
+              <span>How to comunicate with other team members?</span>
               <svg class="h-6 w-6 text-zinc-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z"/>
                 <line x1="12" y1="5" x2="12" y2="19" />
                 <line x1="5" y1="12" x2="19" y2="12" />
               </svg>
             </button>
-            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light" id="answer-3"
-              style="display: none;">Answer</div>
+            <div class="answer p-3 text-sm lg:text-base text-zinc-500 font-normal" id="answer-3" style="display: none;">
+              Very simple, in the comments you can simply tag a member who is relevant to the story and all messages remain visible to other members so that everyone is informed.
+            </div>
           </div>
           <div class="mb-4 rounded-2xl bg-zinc-50">
-            <button class="question-btn flex w-full items-center gap-x-5 justify-between rounded text-left text-base font-light text-black focus:outline-none p-3" data-toggle="answer-4">
-              <span>What are concurrent job runs?</span>
+            <button class="question-btn flex w-full items-center gap-x-5 justify-between rounded text-left text-base font-normal text-gray-900 focus:outline-none p-3" data-toggle="answer-4">
+              <span>Should I open each story to see the type and owner?</span>
               <svg class="h-6 w-6 text-zinc-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z"/>
                 <line x1="12" y1="5" x2="12" y2="19" />
                 <line x1="5" y1="12" x2="19" y2="12" />
               </svg>
             </button>
-            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light" id="answer-4"
-              style="display: none;">Answer</div>
-          </div>
-          <div class="mb-4 rounded-2xl bg-zinc-50">
-            <button class="question-btn flex w-full items-center gap-x-5 justify-between rounded text-left text-base font-light text-black focus:outline-none p-3" data-toggle="answer-5">
-              <span>What if I am building open-source?</span>
-              <svg class="h-6 w-6 text-zinc-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z"/>
-                <line x1="12" y1="5" x2="12" y2="19" />
-                <line x1="5" y1="12" x2="19" y2="12" />
-              </svg>
-            </button>
-            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light" id="answer-5"
-              style="display: none;">Answer</div>
+            <div class="answer p-3 text-sm lg:text-base text-zinc-500 font-normal" id="answer-4" style="display: none;">
+              No, initially all stories are collapsed with visible story name and type icon bug, feature, etc. with owner and label, so it could be expanded to see details.
+            </div>
           </div>
         </div>
       </div>
     </section>
+    <div class="">
+      <!-- Cal floating-popup embed code begins -->
+      <script type="text/javascript">
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", "litetracker", {origin:"https://cal.com"});
+
+        Cal.ns.litetracker("floatingButton", {"calLink":"neshaz/litetracker","config":{"layout":"month_view"}});
+        Cal.ns.litetracker("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      </script>
+      <!-- Cal floating-popup embed code ends -->
+    </div>
+
   </main>
-  
+  <footer>
+    <div class="mx-auto max-w-md px-6 pt-10 pb-16 flex flex-col items-center justify-center lg:px-8 lg:pt-40">
+      <div class="flex items-center text-zinc-500">
+        <a href="#faq-section">FAQ</a>
+        <div class="w-1 h-1 rounded-full mx-3 bg-zinc-500"></div>
+        <a href="#subscribe-form">Join waitlist</a>
+      </div>
+      <div class="flex items-center pt-4 text-zinc-500">
+        <p class="text-xs leading-5">Copyright &copy; 2024 LiteTracker. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
 
 
   <!-- Google tag (gtag.js) -->
