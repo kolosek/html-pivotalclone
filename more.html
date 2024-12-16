@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,19 +71,6 @@
             </span>
           </button>
 
-          <form class="mx-auto bg-slate-200 text-xs rounded">
-            <label for="default-search" class="mb-2  sr-only">Search project</label>
-            <div class="relative flex items-center">
-              <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                </svg>
-              </div>
-              <input type="search" id="default-search" class="block w-full bg-transparent p-1 pl-10 pr-10 border rounded" placeholder="Search project" />
-              <button id="search-help" class="absolute right-0 px-2 py-2 text-slate-400">?</button>
-            </div>
-          </form>
-
           <a href="#" class="text-xs/6 uppercase flex items-center gap-x-2 hidden">
             What's new
             <svg class="h-4 w-4 text-slate-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -112,11 +97,11 @@
         </div>
       </nav>
       <div id="collapsable-nav-links" class="flex gap-x-2">
-        <a href="#" aria-selected="true" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>Stories</span></a>
+        <a href="#" aria-selected="false" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>Stories</span></a>
         <a href="#" aria-selected="false" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>Analytics</span></a>
         <a href="#" aria-selected="false" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>Members</span></a>
         <a href="#" aria-selected="false" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white hidden"><span>Integrations</span></a>
-        <a href="more.html" aria-selected="false" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>More</span></a>
+        <a href="#" aria-selected="true" class="after:content-[''] after:border-r after:border-slate-400 after:h-3 after:my-0.5 after:absolute after:right-0 relative text-xs pb-2 px-6 uppercase border-b-4 border-b-transparent aria-selected:border-b-slate-400 hover:text-white"><span>More</span></a>
         <button id="close-collapsable-nav-links" class="pb-2 flex items-center hidden">
           <svg class="h-4 w-4 text-slate-300 hover:text-white ml-2 pb-0.5"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
             <polyline points="17 11 12 6 7 11" />
@@ -136,164 +121,62 @@
           </svg>
         </button>
       </div>
-      <div class="h-full bg-zinc-800">
+      <div class="bg-zinc-800 py-4">
         <ul class="space-y-2 text-sm text-stone-300">
           <li aria-selected="false" class="pr-3 border-l-4 border-l-transparent aria-selected:border-l-blue-300 aria-selected:text-blue-300">
-            <a href="#my_work-tasks" class="flex items-center p-2">
-              <svg class="w-5"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="5 12 3 12 12 3 21 12 19 12" />
-                <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-              </svg>
+            <a href="#project-settings" class="flex items-center p-2 hover:underline hover:underline-offset-4">
               <span class="ms-3 flex flex-1 items-center justify-between">
-                <span>My work</span>
-                <span id="my-work_items_count" class="inline-flex items-center justify-center text-xs text-stone-300 w-3 h-3 p-3 ms-3">17</span>
+                <span>Project Settings</span>
               </span>
             </a>
           </li>
           <li aria-selected="false" class="pr-3 border-l-4 border-l-transparent aria-selected:border-l-blue-300 aria-selected:text-blue-300">
-            <a href="#current-iteration-tasks" class="flex items-center p-2">
-              <svg class="w-5"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z"/>
-                <line x1="9" y1="6" x2="20" y2="6" />
-                <line x1="9" y1="12" x2="20" y2="12" />
-                <line x1="9" y1="18" x2="20" y2="18" />
-                <line x1="5" y1="6" x2="5" y2="6.01" />
-                <line x1="5" y1="12" x2="5" y2="12.01" />
-                <line x1="5" y1="18" x2="5" y2="18.01" />
-              </svg>
+            <a href="#project-profile" class="flex items-center p-2 hover:underline hover:underline-offset-4">
               <span class="ms-3 flex flex-1 items-center justify-between">
-                <span>Current iteration</span>
-                <span id="current-iteration_items_count" class="inline-flex items-center justify-center text-xs text-stone-300 w-3 h-3 p-3 ms-3"></span>
+                <span>Project Profile</span>
               </span>
             </a>
           </li>
           <li aria-selected="false" class="pr-3 border-l-4 border-l-transparent aria-selected:border-l-blue-300 aria-selected:text-blue-300">
-            <a href="#backlog-tasks" class="flex items-center p-2">
-              <svg class="w-5"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z"/>
-                <line x1="9" y1="6" x2="20" y2="6" />
-                <line x1="9" y1="12" x2="20" y2="12" />
-                <line x1="9" y1="18" x2="20" y2="18" />
-                <line x1="5" y1="6" x2="5" y2="6.01" />
-                <line x1="5" y1="12" x2="5" y2="12.01" />
-                <line x1="5" y1="18" x2="5" y2="18.01" />
-              </svg>
+            <a href="#project-webhooks" class="flex items-center p-2 hover:underline hover:underline-offset-4">
               <span class="ms-3 flex flex-1 items-center justify-between">
-                <span>Backlog</span>
-                <span id="backlog_items_count" class="inline-flex items-center justify-center text-xs text-stone-300 w-3 h-3 p-3 ms-3"></span>
+                <span>Webhooks</span>
               </span>
             </a>
           </li>
           <li aria-selected="false" class="pr-3 border-l-4 border-l-transparent aria-selected:border-l-blue-300 aria-selected:text-blue-300">
-            <a href="#icebox-tasks" class="flex items-center p-2">
-              <svg class="w-5"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z"/>
-                <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" />
-                <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(60 12 12)" />
-                <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(120 12 12)" />
-                <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(180 12 12)" />
-                <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(240 12 12)" />
-                <path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(300 12 12)" />
-              </svg>
+            <a href="#recover-deleted-stories" class="flex items-center p-2 hover:underline hover:underline-offset-4">
               <span class="ms-3 flex flex-1 items-center justify-between">
-                <span>Icebox</span>
-                <span id="icebox_items_count" class="inline-flex items-center justify-center text-xs text-stone-300 w-3 h-3 p-3 ms-3"></span>
+                <span>Recover Deleted Stories</span>
               </span>
             </a>
           </li>
           <li aria-selected="false" class="pr-3 border-l-4 border-l-transparent aria-selected:border-l-blue-300 aria-selected:text-blue-300">
-            <a href="#done-tasks" class="flex items-center p-2">
-              <svg class="w-5"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z"/>
-                <path d="M5 12l5 5l10 -10" />
-              </svg>
+            <a href="#manage-templates" class="flex items-center p-2 hover:underline hover:underline-offset-4">
               <span class="ms-3 flex flex-1 items-center justify-between">
-                <span>Done</span>
-                <span id="done_items_count" class="inline-flex items-center justify-center text-xs text-stone-300 w-3 h-3 p-3 ms-3"></span>
+                <span>Manage Templates</span>
               </span>
             </a>
           </li>
           <li aria-selected="false" class="pr-3 border-l-4 border-l-transparent aria-selected:border-l-blue-300 aria-selected:text-blue-300 hidden">
-            <a href="#item-6" class="flex items-center p-2">
-              <svg class="w-5"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z"/>
-                <path d="M12 9v2m0 4v.01" />
-                <path d="M5.07 19H19a2 2 0 0 0 1.75 -2.75L13.75 4a2 2 0 0 0 -3.5 0L3.25 16.25a2 2 0 0 0 1.75 2.75" />
-              </svg>
+            <a href="#manage-review-types" class="flex items-center p-2 hover:underline hover:underline-offset-4">
               <span class="ms-3 flex flex-1 items-center justify-between">
-                <span>Blocked</span>
-                <span id="blocked_items_count" class="inline-flex items-center justify-center text-xs text-stone-300 w-3 h-3 p-3 ms-3">3</span>
-              </span>
-            </a>
-          </li>
-          <li aria-selected="false" class="pr-3 border-l-4 border-l-transparent aria-selected:border-l-blue-300 aria-selected:text-blue-300">
-            <a href="#item-6" class="flex items-center p-2">
-              <svg class="w-5"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z"/>
-                <path d="M9 12l2 2l4 -4" />
-                <path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3" />
-              </svg>
-              <span class="ms-3 flex flex-1 items-center justify-between">
-                <span>Epics</span>
-                <span id="epics_items_count" class="inline-flex items-center justify-center text-xs text-stone-300 w-3 h-3 p-3 ms-3"></span>
-              </span>
-            </a>
-          </li>
-          <li aria-selected="false" class="pr-3 border-l-4 border-l-transparent aria-selected:border-l-blue-300 aria-selected:text-blue-300">
-            <a href="#labels-tasks" class="flex items-center p-2">
-              <svg class="w-5"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z"/>
-                <line x1="5" y1="5" x2="5" y2="21" />
-                <line x1="19" y1="5" x2="19" y2="14" />
-                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0" />
-                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0" />
-              </svg>
-              <span class="ms-3 flex flex-1 items-center justify-between">
-                <span>Labels</span>
-                <span id="labels_items_count" class="inline-flex items-center justify-center text-xs text-stone-300 w-3 h-3 p-3 ms-3"></span>
-              </span>
-            </a>
-          </li>
-          <li aria-selected="false" class="pr-3 border-l-4 border-l-transparent aria-selected:border-l-blue-300 aria-selected:text-blue-300 hidden">
-            <a href="#item-6" class="flex items-center p-2">
-              <svg class="w-5"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z"/>
-                <polyline points="12 8 12 12 14 14" />
-                <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" />
-              </svg>
-              <span class="ms-3 flex flex-1 items-center justify-between">
-                <span>Project history</span>
-                <span id="project-history_items_count" class="inline-flex items-center justify-center text-xs text-stone-300 w-3 h-3 p-3 ms-3"></span>
+                <span>Manage Review Types</span>
               </span>
             </a>
           </li>
         </ul>
       </div>
-      <div class="bg-zinc-800 p-2 flex flex-col border-t-4 border-t-black text-stone-300 text-sm">
+      <div class="h-full bg-zinc-800 p-2 pt-4 flex flex-col border-t-4 border-t-black text-stone-300 text-sm">
         <div class="flex items-center pb-4">
-          <span class="">
-            T
-            <span class="text-[9px]">T</span>
-          </span>
-          <span class="ml-4">
-            Display:
-            <span id="style-display" class="">Normal</span>
-          </span>
-          <svg class="h-4 w-4 text-slate-300 ml-6"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z"/>
-            <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
-          </svg>
+          <button class="ml-4 hover:underline hover:underline-offset-4">
+            Import CSV
+          </button>
         </div>
         <div class="flex items-center pb-4">
-          <svg class="h-5 w-5 text-stone-300 hover:text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z"/>
-            <path d="M4 8v-2a2 2 0 0 1 2 -2h2" />
-            <path d="M4 16v2a2 2 0 0 0 2 2h2" />
-            <path d="M16 4h2a2 2 0 0 1 2 2v2" />
-            <path d="M16 20h2a2 2 0 0 0 2 -2v-2" />
-            <circle cx="12" cy="12" r="3" />
-          </svg>
-          <input id="default-range" type="range" value="0" class="w-36 ml-2.5 h-0.5 bg-stone-300 rounded-lg appearance-none cursor-pointer accent-stone-300">
+          <button class="ml-4 hover:underline hover:underline-offset-4">
+            Export CSV
+          </button>
         </div>
       </div>
     </aside>
@@ -3788,7 +3671,7 @@
         collapsableNavLinks.addEventListener('click', function(event) {
           console.log(event.target.tagName);
           if (event.target.tagName === 'A' || event.target.closest('a') !== null) {
-            // event.preventDefault();
+            event.preventDefault();
 
             // Find the closest anchor tag
             let anchor = event.target.closest('a');
@@ -3805,35 +3688,6 @@
                 }
             });
           }
-        });
-
-        // drag and drop
-        const container = document.getElementById('items-container');
-
-        // Initialize Sortable.js
-        new Sortable(container, {
-          animation: 350,
-          chosenClass: "shadow-2xl",
-          handle: ".task-btn", // Make buttons draggable
-          swap: true,
-          swapClass: {
-            before: "before-move",
-            after: "after-move"
-          }
-        });
-
-        // Initialize Sortable.js for each item
-        Array.from(document.querySelectorAll('.item-col')).forEach(item => {
-          new Sortable(item, {
-            animation: 350,
-            chosenClass: "shadow-2xl",
-            handle: ".task-btn",
-            swap: true,
-            swapClass: {
-              before: "before-move",
-              after: "after-move"
-            }
-          });
         });
 
 
@@ -3872,7 +3726,6 @@
 
         let tabTogglers = tabsContainer.querySelectorAll("#tabs a");
 
-        console.log(tabTogglers);
 
         tabTogglers.forEach(function(toggler) {
           toggler.addEventListener("click", function(e) {
