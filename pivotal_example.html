@@ -2858,7 +2858,7 @@
                     </div>
                   </div>
                   <div class="answer text-sm lg:text-base" id="epic-story-1" style="display: none;">
-                    <div class="bg-slate-100 w-full items-start text-left px-3.5 py-2.5 hover:bg-slate-200" data-toggle="epic-story-1">
+                    <div class="bg-stone-200 w-full items-start text-left px-3.5 py-2.5 hover:bg-stone-300" data-toggle="epic-story-1">
                       <div class="main-edit-wrapper flex flex-col gap-y-3.5">
                         <section id="story-edit" class="flex items-start justify-between">
                           <div class="flex items-start flex-grow gap-x-4">
@@ -2921,51 +2921,66 @@
                           </div>
                         </section>
                         <section id="story-info">
+                          <p class="text-xs text-stone-400">Stories with this label become part of this epic</p>
                           <div class="flex">
-                            <div id="story-info" class="flex flex-col w-72 rounded border border-stone-300">
+                            <div id="story-info" class="flex flex-col w-72 rounded border border-stone-400">
                               <div class="px-2.5 h-7">
                                 <div class="flex items-center h-full">
-                                  <p class="uppercase text-xs text-neutral-600">State</p>
+                                  <p class="uppercase text-xs text-neutral-600">Linked label</p>
                                   <span class="flex flex-grow justify-end items-center">
-                                    <a href="#" id="story-next-status" class="flex items-center rounded bg-amber-500 shadow-sm text-xs/6 text-white px-2 font-medium">
-                                      Deliver
+                                    <a href="#" id="linked-label-name" class="flex items-center rounded-l bg-purple-800 shadow-sm text-xs/6 text-white px-2 font-medium">
+                                      epic name
+                                    </a>
+                                    <a href="#" id="delete-label" class="flex items-center rounded-r bg-purple-800 shadow-sm text-xs/6 text-white px-2 font-medium">
+                                      X
                                     </a>
                                   </span>
   
                                   <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
-                                    <input type="checkbox" id="story-set-state" class="hidden absolute" data-dropdown-toggle>
-                                    <label for="story-set-state" class="flex items-center space-x-1 cursor-pointer">
-                                      <span id="story-current-state" class="text-xs">Finished</span>
+                                    <input type="checkbox" id="add-linked-label" class="hidden absolute" data-dropdown-toggle>
+                                    <label for="add-linked-label" class="flex items-center space-x-1 cursor-pointer">
                                       <svg class="h-2 w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                       </svg>
                                     </label>
-                                    <div id="stateboxmenu" class="absolute mt-1 right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
-                                      <ul class="block text-xs text-neutral-600 w-24">
-                                        <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Unstarted</a></li>
-                                        <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Started</a></li>
-                                        <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Finished</a></li>
-                                        <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Delivered</a></li>
-                                        <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Rejected</a></li>
-                                        <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Accepted</a></li>
+                                    <div id="linkedlabelsboxmenu" class="absolute mt-2.5 -right-[11px] top-full w-72 shadow rounded bg-white border border-stone-400 z-10 hidden" data-dropdown-content>
+                                      <ul class="block text-xs text-neutral-600">
+                                        <li>
+                                          <a href="#" class="flex items-center px-2 leading-8 text-emerald-500 hover:bg-gray-200">
+                                            <img src="images/label.svg" alt="" class="mr-2">
+                                            rubyci
+                                          </a>
+                                        </li>
+                                        <li>
+                                          <a href="#" class="flex items-center px-2 leading-8 text-purple-800 hover:bg-gray-200">
+                                            <img src="images/epic.svg" alt="" class="mr-2">
+                                            epic_label
+                                          </a>
+                                        </li>
+                                        <li>
+                                          <a href="#" class="flex items-center px-2 leading-8 text-emerald-500 hover:bg-gray-200">
+                                            <img src="images/label.svg" alt="" class="mr-2">
+                                            fastci
+                                          </a>
+                                        </li>
                                       </ul>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                               
-                              <div class="px-2.5 h-7 border-t border-stone-300">
+                              <div class="px-2.5 h-7 border-t border-stone-400">
                                 <div class="flex items-center justify-between h-full">
-                                  <p class="uppercase text-xs text-neutral-600">Points</p>
+                                  <a href="#" class="uppercase text-xs font-medium text-sky-700">add/view stories</a>
                                   <div class="relative flex items-center justify-center ml-2">
                                     <span id="story-points-state" class="text-xs">2 points</span>
                                   </div>
                                 </div>
                               </div>  <!-- end  points -->
                               
-                              <div class="px-2.5 h-7 border-t border-stone-300">
+                              <div class="px-2.5 h-7 border-t border-stone-400">
                                 <div class="flex items-center justify-between h-full">
-                                  <p class="uppercase text-xs text-neutral-600">Follow this story</p>
+                                  <p class="uppercase text-xs text-neutral-600">Follow this epic</p>
   
                                   <div class="relative flex items-center justify-center ml-2">
                                     <div id="story-followers" class="flex items-center space-x-1 cursor-pointer text-xs text-neutral-600">
@@ -2992,7 +3007,7 @@
                                   </div>
                                 </div>
                               </div>  <!-- end  followers -->
-                              <div class="px-2.5 h-7 border-t border-stone-300">
+                              <div class="px-2.5 h-7 border-t border-stone-400">
                                 <div class="flex items-center justify-center h-full">
                                   <p class="text-xs text-neutral-600">Updated:</p>
                                   <p class="text-xs text-neutral-600">20 Nov 2024, 10:04pm</p>
