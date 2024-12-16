@@ -49,6 +49,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   </script>
   <!-- End MailerLite Universal -->
+
   
   <style>
     .ml-form-embedBody {
@@ -340,6 +341,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           });
         });
       });
+    </script>
+
+    <script>
+      const button = document.getElementsByClassName('primary')[0];
+      button.onclick = () => umami.track('Subscribe');
     </script>
 </body>
 </html>
