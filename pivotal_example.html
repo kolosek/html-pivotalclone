@@ -2837,8 +2837,8 @@
             <div class="flex flex-col overflow-y-auto">
               <div class="text-sm lg:text-base bg-stone-200 pb-32">
                 <!-- item 1 -->
-                <div id="" class="w-full items-start text-left border-b border-stone-400">
-                  <div class="flex justify-between pl-3.5 text-xs">
+                <div class="content-wrapper w-full items-start text-left border-b border-stone-400">
+                  <div class="content-header flex justify-between pl-3.5 text-xs">
                     <div id="" class="task-btn flex-grow flex flex-col py-2 justify-between" data-toggle="epic-story-1">
                       <p id="epic-name-1" class="leading-5 mb-3">Epic name 1</p>
                       <div id="epic-progress-1" class="flex min-w-28 max-w-56 h-2">
@@ -2862,12 +2862,12 @@
                       <div class="main-edit-wrapper flex flex-col gap-y-3.5">
                         <section id="story-edit" class="flex items-start justify-between">
                           <div class="flex items-start flex-grow gap-x-4">
-                            <div class="flex items-center gap-x-1">
+                            <a href="#" data-target="epic-story-1" class="save-and-collapse flex items-center gap-x-1">
                               <svg class="h-6 w-6 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z"/>
                                 <polyline points="6 15 12 9 18 15" />
                               </svg>
-                            </div>
+                            </a>
                             <div class="flex flex-grow mr-4">
                               <textarea name="text" rows="1" class="w-full p-2 resize-none" oninput="this.style.height = ''; this.style.height = this.scrollHeight +'px'">Epic name 1</textarea>
                             </div>
@@ -2914,7 +2914,7 @@
                               </a>
                             </div>
                             <div>
-                              <a href="#" id="save-current-task-1" data-target="task-4" class="save-and-collapse flex items-center rounded bg-blue-500 shadow-sm text-xs text-white font-medium px-6 h-6">
+                              <a href="#" id="save-current-task-1" data-target="epic-story-1" class="save-and-collapse flex items-center rounded bg-blue-500 shadow-sm text-xs text-white font-medium px-6 h-6">
                                 Collapse
                               </a>
                             </div>
@@ -4056,13 +4056,16 @@
             const targetId = this.getAttribute('data-toggle');
             const target = document.getElementById(targetId);
             const isExpanded = target.style.display === 'block';
+            const contentHeader = this.closest('.content-header');
 
             if (isExpanded) {
               target.style.display = 'none';
+              contentHeader.classList.remove('hidden');
               // this.querySelector('.arrow-down').classList.remove('rotate-180');
               // this.classList.remove('hidden');
             } else {
               target.style.display = 'block';
+              contentHeader.classList.add('hidden');
               // this.querySelector('.arrow-down').classList.add('rotate-180');
               // this.classList.add('hidden');
             }
@@ -4075,12 +4078,17 @@
             const target = document.getElementById(targetId);
             const isVisible = target.style.display === 'block';
 
+            const contentWrapper = this.closest('.content-wrapper');
+            const contentHeader = contentWrapper.querySelector('.content-header');
+
             if (isVisible) {
               // If visible, hide the content but keep the button visible
               target.style.display = 'none';
+              contentHeader.classList.remove('hidden');
             } else {
               // If hidden, show the content
               target.style.display = 'block';
+              contentHeader.classList.add('hidden');
             }
           });
         }); // end handle collapse task
