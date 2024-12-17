@@ -2173,22 +2173,22 @@
                             <p class="uppercase font-bold">Tasks (<span id="done-tasks">1</span>/<span id="tasks-count">3</span>)</p>
                           </div>
                           <div id="add-story-activity" class="bg-neutral-100 rounded border border-stone-300 mt-2">
-                            <div class="relative rounded mx-auto mt-2">
+                            <div class="activity relative rounded mx-auto mt-2">
                               <div class="absolute right-2 top-3">
                                 <a href="#" class="text-blue-500">Formating help</a>
                               </div>
                               <!-- Tabs -->
-                              <ul id="tabs" class="inline-flex pt-2 px-1 w-full border-b">
-                                <li class="bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px"><a id="default-tab" href="#first">Write</a></li>
-                                <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#second">Preview</a></li>
+                              <ul class="tabs inline-flex pt-2 px-1 w-full border-b">
+                                <li class="bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px"><a id="default-tab" href="#backlog-task-1-write">Write</a></li>
+                                <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#backlog-task-1-preview">Preview</a></li>
                               </ul>
 
                               <!-- Tab Contents -->
-                              <div id="tab-contents">
-                                <div id="first" class="p-4 bg-white">
+                              <div class="tab-contents">
+                                <div id="backlog-task-1-write" class="p-4 bg-white">
                                   write content
                                 </div>
-                                <div id="second" class="hidden p-4 bg-white">
+                                <div id="backlog-task-1-preview" class="hidden p-4 bg-white">
                                   preview content
                                 </div>
                                 <div id="activity-actions" class="p-4 bg-white">
@@ -2249,7 +2249,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
                   </svg>
                 </a>
-                <a href="#" class="h-7 w-7 text-gray-500">
+                <a href="#icebox-tasks" class="close-column h-7 w-7 text-gray-500">
                   <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                   </svg>
@@ -2258,9 +2258,9 @@
             </div>
             <div class="flex flex-col divide-y divide-gray-200">
               <div id="icebox-task-1" class="content-wrapper">
-                <div class="bg-sky-100 task-btn cursor-pointer w-full items-start px-2 py-2" data-toggle="task-4">
+                <div class="content-header bg-zinc-100 task-btn cursor-pointer w-full items-start px-2 py-2">
                   <div class="flex items-start justify-between">
-                    <div class="flex items-start gap-x-4">
+                    <div class="task-btn flex-grow flex items-start gap-x-4" data-toggle="icebox-task-3">
                       <div class="flex items-center gap-x-1">
                         <img src="images/icon-star.png" class="h-5 w-5" alt="">
                       </div>
@@ -2276,21 +2276,21 @@
                       <button type="button" class="rounded px-1 text-sm font-bold text-sky-600 hover:bg-gray-200">2</button>
                       <button type="button" class="rounded px-1 text-sm font-bold text-sky-600 hover:bg-gray-200">3</button>
                       <button type="button" class="rounded px-1 text-sm font-bold text-sky-600 hover:bg-gray-200">4</button>
-                      <input id="checkbox" aria-describedby="checkbox-description" name="checkbox" type="checkbox" class="size-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                      <input id="checkbox" aria-describedby="checkbox-description" name="checkbox" type="checkbox" class="size- rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                     </div>
                   </div>
                 </div>
-                <div class="answer text-sm lg:text-base" id="task-4" style="display: none;">
-                  <div class="bg-slate-100 w-full items-start text-left px-3.5 py-2.5 hover:bg-slate-200" data-toggle="task-4">
+                <div class="answer text-sm lg:text-base" id="icebox-task-3" style="display: none;">
+                  <div class="bg-slate-100 w-full items-start text-left px-3.5 py-2.5 hover:bg-slate-200" data-toggle="icebox-task-3">
                     <div class="main-edit-wrapper flex flex-col gap-y-3.5">
                       <section id="story-edit" class="flex items-start justify-between">
                         <div class="flex items-start flex-grow gap-x-4">
-                          <div class="flex items-center gap-x-1">
+                          <a href="#" data-target="icebox-task-3" class="save-and-collapse flex items-center gap-x-1">
                             <svg class="h-6 w-6 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                               <path stroke="none" d="M0 0h24v24H0z"/>
                               <polyline points="6 15 12 9 18 15" />
                             </svg>
-                          </div>
+                          </a>
                           <div class="flex flex-grow mr-4">
                             <textarea name="text" rows="1" class="w-full p-2 resize-none" oninput="this.style.height = ''; this.style.height = this.scrollHeight +'px'">Task 1 with some looooong text text text text</textarea>
                           </div>
@@ -2344,7 +2344,7 @@
                             </a>
                           </div>
                           <div>
-                            <a href="#" id="save-done-task-1" data-target="task-1" class="save-and-collapse flex items-center rounded bg-blue-500 shadow-sm text-xs text-white font-medium px-6 h-6">
+                            <a href="#" data-target="icebox-task-3" class="save-and-collapse flex items-center rounded bg-blue-500 shadow-sm text-xs text-white font-medium px-6 h-6">
                               Collapse
                             </a>
                           </div>
@@ -2363,9 +2363,9 @@
                                 </span>
 
                                 <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
-                                  <input type="checkbox" id="story-set-state" class="hidden absolute" data-dropdown-toggle>
-                                  <label for="story-set-state" class="flex items-center space-x-1 cursor-pointer">
-                                    <span id="story-current-state" class="text-xs">Finished</span>
+                                  <input type="checkbox" id="icebox-story-set-state-1" class="hidden absolute" data-dropdown-toggle>
+                                  <label for="icebox-story-set-state-1" class="flex items-center space-x-1 cursor-pointer">
+                                    <span id="story-1-current-state" class="text-xs">Finished</span>
                                     <svg class="h-2 w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                     </svg>
@@ -2388,8 +2388,8 @@
                                 <p class="uppercase text-xs text-neutral-600">Reviews</p>
 
                                 <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
-                                  <input type="checkbox" id="story-review" class="hidden absolute" data-dropdown-toggle>
-                                  <label for="story-review" class="flex items-center space-x-1 cursor-pointer">
+                                  <input type="checkbox" id="icebox-story-review-1" class="hidden absolute" data-dropdown-toggle>
+                                  <label for="icebox-story-review-1" class="flex items-center space-x-1 cursor-pointer">
                                     <span id="story-current-state" class="text-xxs text-blue-600">+ add review</span>
                                   </label>
                                   <div id="reviewboxmenu" class="absolute mt-1 right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
@@ -2413,8 +2413,8 @@
                                   <span class="flex items-center mr-2">
                                     <img src="images/icon-star.png" class="h-4 w-4" alt="">
                                   </span>
-                                  <input type="checkbox" id="story-type-edit" class="hidden absolute" data-dropdown-toggle>
-                                  <label for="story-type-edit" class="flex items-center space-x-1 cursor-pointer">
+                                  <input type="checkbox" id="icebox-story-type-edit-1" class="hidden absolute" data-dropdown-toggle>
+                                  <label for="icebox-story-type-edit-1" class="flex items-center space-x-1 cursor-pointer">
                                     <span id="story-type-state" class="text-xs">Feature</span>
                                     <svg class="h-2 w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -2463,8 +2463,8 @@
                               <div class="flex items-center justify-between h-full">
                                 <p class="uppercase text-xs text-neutral-600">Points</p>
                                 <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
-                                  <input type="checkbox" id="story-points-edit" class="hidden absolute" data-dropdown-toggle>
-                                  <label for="story-points-edit" class="flex items-center space-x-1 cursor-pointer">
+                                  <input type="checkbox" id="icebox-story-points-edit-1" class="hidden absolute" data-dropdown-toggle>
+                                  <label for="icebox-story-points-edit-1" class="flex items-center space-x-1 cursor-pointer">
                                     <span id="story-points-state" class="text-xs">2 points</span>
                                     <svg class="h-2 w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -2504,8 +2504,8 @@
                                   <span id="user-initials-1" class="flex items-center justify-center uppercase text-xs text-white h-6 w-6 rounded-full bg-zinc-400 mr-2">
                                     SV
                                   </span>
-                                  <input type="checkbox" id="story-requester-edit" class="hidden absolute" data-dropdown-toggle>
-                                  <label for="story-requester-edit" class="flex items-center space-x-1 cursor-pointer">
+                                  <input type="checkbox" id="icebox-story-requester-edit-1" class="hidden absolute" data-dropdown-toggle>
+                                  <label for="icebox-story-requester-edit-1" class="flex items-center space-x-1 cursor-pointer">
                                     <span id="story-requester-state" class="text-xs">SasaV</span>
                                     <svg class="h-2 w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -2557,8 +2557,8 @@
                                   <span id="user-initials-1" class="flex items-center justify-center uppercase text-xs text-white h-6 w-6 rounded-full bg-zinc-400 mr-2">
                                     am
                                   </span>
-                                  <input type="checkbox" id="story-owners-edit" class="hidden absolute" data-dropdown-toggle>
-                                  <label for="story-owners-edit" class="flex items-center space-x-1 cursor-pointer">
+                                  <input type="checkbox" id="icebox-story-owners-edit-1" class="hidden absolute" data-dropdown-toggle>
+                                  <label for="icebox-story-owners-edit-1" class="flex items-center space-x-1 cursor-pointer">
                                     <span id="story-owners-state" class="text-xs">Aleksandar M</span>
                                     <svg class="h-3 w-3 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                       <path stroke="none" d="M0 0h24v24H0z"/>
@@ -2681,8 +2681,8 @@
                               <input type="text" placeholder="Add a label" class="w-full leading-4 outline-none">
                             </div>
                             <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
-                              <input type="checkbox" id="story-labels" class="hidden absolute" data-dropdown-toggle>
-                              <label for="story-labels" class="flex items-center cursor-pointer">
+                              <input type="checkbox" id="icebox-story-labels-1" class="hidden absolute" data-dropdown-toggle>
+                              <label for="icebox-story-labels-1" class="flex items-center cursor-pointer">
                                 <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                 </svg>
@@ -2749,22 +2749,22 @@
                             <p class="uppercase font-bold">Tasks (<span id="done-tasks">1</span>/<span id="tasks-count">3</span>)</p>
                           </div>
                           <div id="add-story-activity" class="bg-neutral-100 rounded border border-stone-300 mt-2">
-                            <div class="relative rounded mx-auto mt-2">
+                            <div class="activity relative rounded mx-auto mt-2">
                               <div class="absolute right-2 top-3">
                                 <a href="#" class="text-blue-500">Formating help</a>
                               </div>
                               <!-- Tabs -->
-                              <ul id="tabs" class="inline-flex pt-2 px-1 w-full border-b">
-                                <li class="bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px"><a id="default-tab" href="#first">Write</a></li>
-                                <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#second">Preview</a></li>
+                              <ul class="tabs inline-flex pt-2 px-1 w-full border-b">
+                                <li class="bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px"><a id="default-tab" href="#icebox-task-1-write">Write</a></li>
+                                <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#icebox-task-1-preview">Preview</a></li>
                               </ul>
 
                               <!-- Tab Contents -->
-                              <div id="tab-contents">
-                                <div id="first" class="p-4 bg-white">
+                              <div class="tab-contents">
+                                <div id="icebox-task-1-write" class="p-4 bg-white">
                                   write content
                                 </div>
-                                <div id="second" class="hidden p-4 bg-white">
+                                <div id="icebox-task-1-preview" class="hidden p-4 bg-white">
                                   preview content
                                 </div>
                                 <div id="activity-actions" class="p-4 bg-white">
@@ -3703,11 +3703,11 @@
             </div>
             <!-- END FOR DONE STORIES -->
 
-            <!-- PLACE FOR Backlog STORIES -->
             <div class="relative border-b border-b-neutral-700">
               <div class="absolute inset-0 h-full w-full bg-neutral-600"></div>
               <p class="relative p-2 text-center font-semibold text-xs text-white">Backlog stories</p>
             </div>
+            <!-- PLACE FOR Backlog STORIES -->
 
             <div id="backlog-task-1" class="content-wrapper">
               <div class="content-header bg-zinc-100 task-btn cursor-pointer w-full items-start px-2 py-2">
@@ -4257,9 +4257,558 @@
             </div> <!-- end id="epic_name_1-backlog-task-1" -->
             <!-- END FOR Backlog STORIES -->
 
+            <div class="relative border-b border-b-neutral-700">
+              <div class="absolute inset-0 h-full w-full bg-neutral-600"></div>
+              <p class="relative p-2 text-center font-semibold text-xs text-white">Icebox stories</p>
+            </div>
             <!-- PLACE FOR Icebox STORIES -->
+            <div id="epic_name_1-icebox-task-1" class="content-wrapper">
+              <div class="content-header bg-zinc-100 task-btn cursor-pointer w-full items-start px-2 py-2">
+                <div class="flex items-start justify-between">
+                  <div class="task-btn flex-grow flex items-start gap-x-4" data-toggle="epic_name_1-icebox-task-3">
+                    <div class="flex items-center gap-x-1">
+                      <img src="images/icon-star.png" class="h-5 w-5" alt="">
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="text-black text-wrap text-sm">Task for icebox <span class="uppercase text-blue-500"> (sv)</span></span>
+                      <div id="task-tag" class="">
+                        <span class="italic text-sm font-semibold text-emerald-500">test_tag</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-x-2">
+                    <button type="button" class="rounded px-1 text-sm font-bold text-sky-600 hover:bg-gray-200">1</button>
+                    <button type="button" class="rounded px-1 text-sm font-bold text-sky-600 hover:bg-gray-200">2</button>
+                    <button type="button" class="rounded px-1 text-sm font-bold text-sky-600 hover:bg-gray-200">3</button>
+                    <button type="button" class="rounded px-1 text-sm font-bold text-sky-600 hover:bg-gray-200">4</button>
+                    <input id="checkbox" aria-describedby="checkbox-description" name="checkbox" type="checkbox" class="size- rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                  </div>
+                </div>
+              </div>
+              <div class="answer text-sm lg:text-base" id="epic_name_1-icebox-task-3" style="display: none;">
+                <div class="bg-slate-100 w-full items-start text-left px-3.5 py-2.5 hover:bg-slate-200" data-toggle="epic_name_1-icebox-task-3">
+                  <div class="main-edit-wrapper flex flex-col gap-y-3.5">
+                    <section id="story-edit" class="flex items-start justify-between">
+                      <div class="flex items-start flex-grow gap-x-4">
+                        <a href="#" data-target="epic_name_1-icebox-task-3" class="save-and-collapse flex items-center gap-x-1">
+                          <svg class="h-6 w-6 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z"/>
+                            <polyline points="6 15 12 9 18 15" />
+                          </svg>
+                        </a>
+                        <div class="flex flex-grow mr-4">
+                          <textarea name="text" rows="1" class="w-full p-2 resize-none" oninput="this.style.height = ''; this.style.height = this.scrollHeight +'px'">Task 1 with some looooong text text text text</textarea>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-x-2">
+                        <a href="#" class="rounded bg-white shadow-sm h-6 w-6">
+                          <svg class="m-1 h-fit w-fit text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 3 21 3 21 9" />
+                            <polyline points="9 21 3 21 3 15" />
+                            <line x1="21" y1="3" x2="14" y2="10" />
+                            <line x1="3" y1="21" x2="10" y2="14" />
+                          </svg>
+                        </a>
+                      </div>
+                    </section>
+                    <section id="story-actions">
+                      <div class="flex items-center gap-x-2">
+                        <div class="flex items-center">
+                          <a href="#" class="flex justify-center items-center bg-slate-50 border border-gray-300 hover:bg-white h-6 w-6">
+                            <svg class="h-4 w-4 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z"/>
+                              <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+                              <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+                            </svg>
+                          </a>
+                          <a href="#" class="flex justify-center items-center bg-slate-50 border border-gray-300 hover:bg-white text-xxs/5 font-normal h-6 w-6">ID</a>
+                          <input readonly value="#123456789" class="h-6 w-20 px-2 border border-gray-300 text-xs font-normal"></input>
+                        </div>
+                        <div class="flex items-center">
+                          <a href="#" class="flex justify-center items-center bg-slate-50 border border-gray-300 hover:bg-white h-6 w-6">
+                            <svg class="h-4 w-4 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z"/>
+                              <rect x="8" y="8" width="12" height="12" rx="2" />
+                              <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2" />
+                            </svg>
+                          </a>
+                          <a href="#" class="flex justify-center items-center bg-slate-50 border border-gray-300 hover:bg-white h-6 w-6">
+                            <svg class="h-4 w-4 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z"/>
+                              <polyline points="12 8 12 12 14 14" />
+                              <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" />
+                            </svg>
+                          </a>
+                          <a href="#" class="flex justify-center items-center bg-slate-50 border border-gray-300 hover:bg-white h-6 w-6">
+                            <svg class="h-4 w-4 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <polyline points="3 6 5 6 21 6" />
+                              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                              <line x1="10" y1="11" x2="10" y2="17" />
+                              <line x1="14" y1="11" x2="14" y2="17" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="#" data-target="epic_name_1-icebox-task-3" class="save-and-collapse flex items-center rounded bg-blue-500 shadow-sm text-xs text-white font-medium px-6 h-6">
+                            Collapse
+                          </a>
+                        </div>
+                      </div>
+                    </section>
+                    <section id="story-info">
+                      <div class="flex flex-row-reverse justify-end flex-wrap items-start gap-x-2">
+                        <div class="flex flex-col w-72 border border-stone-300 rounded">
+                          <div class="px-2.5 h-7">
+                            <div class="flex items-center h-full">
+                              <p class="uppercase text-xs text-neutral-600">State</p>
+                              <span class="flex flex-grow justify-end items-center">
+                                <button type="button" id="story-next-status" class="flex items-center rounded bg-amber-500 shadow-sm text-xs/6 text-white px-2 font-medium">
+                                  Deliver
+                                </button>
+                              </span>
 
+                              <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
+                                <input type="checkbox" id="epic_name_1-icebox-story-set-state-1" class="hidden absolute" data-dropdown-toggle>
+                                <label for="epic_name_1-icebox-story-set-state-1" class="flex items-center space-x-1 cursor-pointer">
+                                  <span id="story-1-current-state" class="text-xs">Finished</span>
+                                  <svg class="h-2 w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                  </svg>
+                                </label>
+                                <div id="stateboxmenu" class="absolute mt-1 right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
+                                  <ul class="block text-xs text-neutral-600 w-24">
+                                    <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Unstarted</a></li>
+                                    <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Started</a></li>
+                                    <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Finished</a></li>
+                                    <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Delivered</a></li>
+                                    <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Rejected</a></li>
+                                    <li><a href="#" class="block px-3 h-6 leading-6 hover:bg-gray-200">Accepted</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="px-2.5 h-7">
+                            <div class="flex items-center justify-between h-full">
+                              <p class="uppercase text-xs text-neutral-600">Reviews</p>
 
+                              <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
+                                <input type="checkbox" id="epic_name_1-icebox-story-review-1" class="hidden absolute" data-dropdown-toggle>
+                                <label for="epic_name_1-icebox-story-review-1" class="flex items-center space-x-1 cursor-pointer">
+                                  <span id="story-current-state" class="text-xxs text-blue-600">+ add review</span>
+                                </label>
+                                <div id="reviewboxmenu" class="absolute mt-1 right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
+                                  <ul class="block text-sm text-neutral-600">
+                                    <li class="block px-3 leading-9 opacity-60">Select review type</li>
+                                    <li><a href="#" class="block px-3 leading-9 hover:bg-gray-200">Staging QA</a></li>
+                                    <li><a href="#" class="block px-3 leading-9 hover:bg-gray-200">Production QA</a></li>
+                                    <li><a href="#" class="block px-3 leading-9 hover:bg-gray-200">Development QA</a></li>
+                                    <li><a href="#" class="block px-3 leading-9 hover:bg-gray-200 text-blue-600 mt-2 border-t border-stone-300">Manage Review Types</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="story-info" class="flex flex-col w-72 rounded border border-stone-300">
+                          <div class="px-2.5 h-7">
+                            <div class="flex items-center justify-between h-full">
+                              <p class="uppercase text-xs text-neutral-600">Story type</p>
+                              <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
+                                <span class="flex items-center mr-2">
+                                  <img src="images/icon-star.png" class="h-4 w-4" alt="">
+                                </span>
+                                <input type="checkbox" id="epic_name_1-icebox-story-type-edit-1" class="hidden absolute" data-dropdown-toggle>
+                                <label for="epic_name_1-icebox-story-type-edit-1" class="flex items-center space-x-1 cursor-pointer">
+                                  <span id="story-type-state" class="text-xs">Feature</span>
+                                  <svg class="h-2 w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                  </svg>
+                                </label>
+                                <div id="typeboxmenu" class="absolute mt-1 -right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
+                                  <ul class="block text-xs text-neutral-600">
+                                    <li>
+                                      <a href="#" class="flex w-32 px-2 leading-8 hover:bg-gray-200">
+                                        <span class="flex items-center mr-2">
+                                          <img src="images/icon-star.png" class="h-4 w-4" alt="">
+                                        </span>
+                                        Feature
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="flex w-32 px-2 leading-8 hover:bg-gray-200">
+                                        <span class="flex items-center mr-2">
+                                          <img src="images/dropdown-bug.png" class="h-4 w-4" alt="">
+                                        </span>
+                                        Bug
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="flex w-32 px-2 leading-8 hover:bg-gray-200">
+                                        <span class="flex items-center mr-2">
+                                          <img src="images/dropdown-chore.png" class="h-4 w-4" alt="">
+                                        </span>
+                                        Chore
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="flex w-32 px-2 leading-8 hover:bg-gray-200">
+                                        <span class="flex items-center mr-2">
+                                          <img src="images/dropdown-release.png" class="h-4 w-4" alt="">
+                                        </span>
+                                        Release
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div> <!-- end  story type -->
+                          <div class="px-2.5 h-7 border-t border-stone-300">
+                            <div class="flex items-center justify-between h-full">
+                              <p class="uppercase text-xs text-neutral-600">Points</p>
+                              <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
+                                <input type="checkbox" id="epic_name_1-icebox-story-points-edit-1" class="hidden absolute" data-dropdown-toggle>
+                                <label for="epic_name_1-icebox-story-points-edit-1" class="flex items-center space-x-1 cursor-pointer">
+                                  <span id="story-points-state" class="text-xs">2 points</span>
+                                  <svg class="h-2 w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                  </svg>
+                                </label>
+                                <div id="pointsboxmenu" class="absolute mt-1 -right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
+                                  <ul class="block text-xs text-neutral-600">
+                                    <li>
+                                      <a href="#" class="flex w-32 px-4 leading-8 hover:bg-gray-200">
+                                        0 Points
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="flex w-32 px-4 leading-8 hover:bg-gray-200">
+                                        1 Point
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="flex w-32 px-4 leading-8 hover:bg-gray-200">
+                                        2 Points
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="flex w-32 px-4 leading-8 hover:bg-gray-200">
+                                        3 Points
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>  <!-- end  points -->
+                          <div class="px-2.5 h-7 border-t border-stone-300">
+                            <div class="flex items-center justify-between h-full">
+                              <p class="uppercase text-xs text-neutral-600">Requester</p>
+                              <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
+                                <span id="user-initials-1" class="flex items-center justify-center uppercase text-xs text-white h-6 w-6 rounded-full bg-zinc-400 mr-2">
+                                  SV
+                                </span>
+                                <input type="checkbox" id="epic_name_1-icebox-story-requester-edit-1" class="hidden absolute" data-dropdown-toggle>
+                                <label for="epic_name_1-icebox-story-requester-edit-1" class="flex items-center space-x-1 cursor-pointer">
+                                  <span id="story-requester-state" class="text-xs">SasaV</span>
+                                  <svg class="h-2 w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                  </svg>
+                                </label>
+                                <div id="typeboxmenu" class="absolute mt-1 -right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
+                                  <ul class="block text-xs text-neutral-600">
+                                    <li>
+                                      <a href="#" class="flex items-center w-32 px-2 leading-8 hover:bg-gray-200">
+                                        <span id="user-initials-1" class="flex items-center justify-center uppercase text-white h-6 w-6 rounded-full bg-zinc-400 mr-2">
+                                          SV
+                                        </span>
+                                        SasaV
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="flex items-center w-32 px-2 leading-8 hover:bg-gray-200">
+                                        <span id="user-initials-2" class="flex items-center justify-center uppercase text-white h-6 w-6 rounded-full bg-zinc-400 mr-2">
+                                          am
+                                        </span>
+                                        Aleksandar M
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="flex items-center w-32 px-2 leading-8 hover:bg-gray-200">
+                                        <span id="user-initials-3" class="flex items-center justify-center uppercase text-white h-6 w-6 rounded-full bg-zinc-400 mr-2">
+                                          mm
+                                        </span>
+                                        Marko M
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="flex items-center w-32 px-2 leading-8 hover:bg-gray-200">
+                                        <span id="user-initials-4" class="flex items-center justify-center uppercase text-white h-6 w-6 rounded-full bg-zinc-400 mr-2">
+                                          lb
+                                        </span>
+                                        Luka B
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>  <!-- end  requester -->
+                          <div class="px-2.5 h-7 border-t border-stone-300">
+                            <div class="flex items-center justify-between h-full">
+                              <p class="uppercase text-xs text-neutral-600">Owners</p>
+                              <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
+                                <span id="user-initials-1" class="flex items-center justify-center uppercase text-xs text-white h-6 w-6 rounded-full bg-zinc-400 mr-2">
+                                  am
+                                </span>
+                                <input type="checkbox" id="epic_name_1-icebox-story-owners-edit-1" class="hidden absolute" data-dropdown-toggle>
+                                <label for="epic_name_1-icebox-story-owners-edit-1" class="flex items-center space-x-1 cursor-pointer">
+                                  <span id="story-owners-state" class="text-xs">Aleksandar M</span>
+                                  <svg class="h-3 w-3 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z"/>
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                  </svg>
+                                </label>
+                                <div id="ownersboxmenu" class="absolute mt-1 -right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
+                                  <ul class="block text-xs text-neutral-600">
+                                    <li>
+                                      <a href="#" class="flex items-center w-32 px-2 leading-8 hover:bg-gray-200">
+                                        <span id="user-initials-1" class="flex items-center justify-center uppercase text-white h-6 w-6 rounded-full bg-zinc-400 mr-2">
+                                          SV
+                                        </span>
+                                        SasaV
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="flex items-center w-32 px-2 leading-8 hover:bg-gray-200">
+                                        <span id="user-initials-2" class="flex items-center justify-center uppercase text-white h-6 w-6 rounded-full bg-zinc-400 mr-2">
+                                          am
+                                        </span>
+                                        Aleksandar M
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="flex items-center w-32 px-2 leading-8 hover:bg-gray-200">
+                                        <span id="user-initials-3" class="flex items-center justify-center uppercase text-white h-6 w-6 rounded-full bg-zinc-400 mr-2">
+                                          mm
+                                        </span>
+                                        Marko M
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="flex items-center w-32 px-2 leading-8 hover:bg-gray-200">
+                                        <span id="user-initials-4" class="flex items-center justify-center uppercase text-white h-6 w-6 rounded-full bg-zinc-400 mr-2">
+                                          lb
+                                        </span>
+                                        Luka B
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>  <!-- end  owners -->
+                          <div class="px-2.5 h-7 border-t border-stone-300">
+                            <div class="flex items-center justify-between h-full">
+                              <p class="uppercase text-xs text-neutral-600">Follow this story</p>
+
+                              <div class="relative flex items-center justify-center ml-2">
+                                <div id="story-followers" class="flex items-center space-x-1 cursor-pointer text-xs text-neutral-600">
+                                  (
+                                  <span id="story-followers-count" class="text-xxs text-blue-600">
+                                    2
+                                  </span>
+                                  <span class="text-xxs text-blue-600">
+                                    followers
+                                  </span>
+                                  )
+                                </div>
+                                <input type="checkbox" id="follow-story" class="ml-2">
+                                <div id="boxmenu" class="absolute mt-1 right-4 w-64 top-full shadow rounded ring-1 ring-gray-800 bg-white z-10 hidden">
+                                  <div class="flex flex-col w-full">
+                                    <div class="bg-lime-600 px-3 py-2">
+                                      <p class="text-xxs text-white">People following this story</p>
+                                    </div>
+                                    <div class="px-3 py-2">
+                                      <p class="text-xxs text-wrap">SasaV, Aleksandar M, SasaV, Aleksandar M, SasaV, Aleksandar M</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>  <!-- end  followers -->
+                          <div class="px-2.5 h-7 border-t border-stone-300">
+                            <div class="flex items-center justify-center h-full">
+                              <p class="text-xs text-neutral-600">Updated:</p>
+                              <p class="text-xs text-neutral-600">20 Nov 2024, 10:04pm</p>
+                            </div>
+                          </div>  <!-- end  updated at -->
+                        </div>
+                      </div>
+                    </section>
+                    <section id="story-blockers">
+                      <div id="blockers-wrapper" class="flex flex-col">
+                        <div id="blockers-header">
+                          <p class="uppercase font-bold text-xs">Blockers</p>
+                        </div>
+                        <div id="blocker-stories" class="bg-stone-200 rounded mt-2">
+                          <button class="flex items-center text-neutral-500 text-xs py-3 px-2">
+                            <svg class="h-4 w-4 text-gray-500 mr-2"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z"/>
+                              <line x1="12" y1="5" x2="12" y2="19" />
+                              <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                            Add blocker or impediment
+                          </button>
+                        </div>
+                      </div>
+                    </section>
+                    <!-- TO DO - after click show tabs on top and options on bottom -->
+                    <section id="story-description">
+                      <div id="description-wrapper" class="flex flex-col">
+                        <div id="description-header">
+                          <p class="uppercase font-bold text-xs">description</p>
+                        </div>
+                        <div id="story-description" class="rounded mt-2">
+                          <textarea name="text" rows="1" class="w-full py-3 px-2 resize-none text-xs" oninput="this.style.height = ''; this.style.height = this.scrollHeight +'px'">Task 1 with some looooong text text text text</textarea>
+                        </div>
+                      </div>
+                    </section>
+                    <section id="story-labels">
+                      <div id="labels-wrapper" class="flex flex-col text-xs">
+                        <div id="labels-header">
+                          <p class="uppercase font-bold">labels</p>
+                        </div>
+                        <div class="rounded mt-2 py-3 px-2 flex bg-white">
+                          <div class="flex-grow">
+                            <input type="text" placeholder="Add a label" class="w-full leading-4 outline-none">
+                          </div>
+                          <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
+                            <input type="checkbox" id="epic_name_1-icebox-story-labels-1" class="hidden absolute" data-dropdown-toggle>
+                            <label for="epic_name_1-icebox-story-labels-1" class="flex items-center cursor-pointer">
+                              <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                              </svg>
+                            </label>
+                            <div id="labelsboxmenu" class="absolute mt-1 -right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
+                              <ul class="block text-xs text-neutral-600">
+                                <li>
+                                  <a href="#" class="flex items-center w-64 px-2 leading-8 text-emerald-500 hover:bg-gray-200">
+                                    <img src="images/label.svg" alt="" class="mr-2">
+                                    rubyci
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#" class="flex items-center w-64 px-2 leading-8 text-emerald-500 hover:bg-gray-200">
+                                    <img src="images/epic.svg" alt="" class="mr-2">
+                                    epic_label
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#" class="flex items-center w-64 px-2 leading-8 text-emerald-500 hover:bg-gray-200">
+                                    <img src="images/label.svg" alt="" class="mr-2">
+                                    fastci
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <section id="story-code">
+                      <div id="code-wrapper" class="flex flex-col text-xs">
+                        <div id="code-header">
+                          <p class="uppercase font-bold">code</p>
+                        </div>
+                        <div class="rounded mt-2 py-3 px-2 flex bg-white">
+                          <div class="flex-grow">
+                            <input type="text" placeholder="Paste link to pull request or branch..." class="w-full leading-4 outline-none">
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <section id="story-tasks">
+                      <div id="tasks-wrapper" class="flex flex-col text-xs">
+                        <div id="tasks-header">
+                          <p class="uppercase font-bold">Tasks (<span id="done-tasks">1</span>/<span id="tasks-count">3</span>)</p>
+                        </div>
+                        <div id="add-story-tasks" class="bg-stone-200 rounded mt-2">
+                          <button class="flex items-center text-neutral-500 py-3 px-2">
+                            <svg class="h-4 w-4 text-gray-500 mr-2"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z"/>
+                              <line x1="12" y1="5" x2="12" y2="19" />
+                              <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                            Add a task
+                          </button>
+                        </div>
+                        <!-- TO DO - add script and div to show input and add task on click -->
+                      </div>
+                    </section>
+                    <section id="story-activity">
+                      <div id="activity-wrapper" class="flex flex-col text-xs pb-6">
+                        <div id="activity-header">
+                          <p class="uppercase font-bold">Tasks (<span id="done-tasks">1</span>/<span id="tasks-count">3</span>)</p>
+                        </div>
+                        <div id="add-story-activity" class="bg-neutral-100 rounded border border-stone-300 mt-2">
+                          <div class="activity relative rounded mx-auto mt-2">
+                            <div class="absolute right-2 top-3">
+                              <a href="#" class="text-blue-500">Formating help</a>
+                            </div>
+                            <!-- Tabs -->
+                            <ul class="tabs inline-flex pt-2 px-1 w-full border-b">
+                              <li class="bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px"><a id="default-tab" href="#epic_name_1-icebox-task-1-write">Write</a></li>
+                              <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#epic_name_1-icebox-task-1-preview">Preview</a></li>
+                            </ul>
+
+                            <!-- Tab Contents -->
+                            <div class="tab-contents">
+                              <div id="epic_name_1-icebox-task-1-write" class="p-4 bg-white">
+                                write content
+                              </div>
+                              <div id="epic_name_1-icebox-task-1-preview" class="hidden p-4 bg-white">
+                                preview content
+                              </div>
+                              <div id="activity-actions" class="p-4 bg-white">
+                                <div class="flex items-center justify-between">
+                                  <div class="flex items-center">
+                                    <a href="#" class="p-2">
+                                      <img src="images/icon-mention.svg" alt="">
+                                    </a>
+                                    <a href="#" class="p-2">
+                                      <svg class="h-5 w-5 text-zinc-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z"/>
+                                        <path d="M15 7l-6.5 6.5a1.5 1.5 0 0 0 3 3l6.5 -6.5a3 3 0 0 0 -6 -6l-6.5 6.5a4.5 4.5 0 0 0 9 9 l6.5 -6.5" />
+                                      </svg>
+                                    </a>
+                                    <a href="#" class="p-2">
+                                      <svg class="h-5 w-5 text-zinc-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />
+                                        <line x1="9" y1="10" x2="9.01" y2="10" />
+                                        <line x1="15" y1="10" x2="15.01" y2="10" />
+                                        <path d="M9.5 15a3.5 3.5 0 0 0 5 0" />
+                                      </svg>
+                                    </a>
+                                  </div>
+                                  <div>
+                                    <button class="flex items-center rounded bg-blue-500 hover:bg-blue-600 shadow-sm text-xs text-white font-medium px-6 h-6">
+                                      Post comment
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END FOR Icebox STORIES -->
           </div>
 
           <!-- END epics tasks columns -->
