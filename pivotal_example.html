@@ -4826,7 +4826,7 @@
                   </svg>
                 </a>
 
-                <a href="#" class="h-7 w-7 text-gray-500">
+                <a href="#my_work-tasks" class="close-column h-7 w-7 text-gray-500">
                   <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                   </svg>
@@ -4835,9 +4835,9 @@
             </div>
             <div class="flex flex-col divide-y divide-gray-200">
               <div id="my_work-task-1" class="content-wrapper">
-                <div class="bg-yellow-100 task-btn cursor-pointer w-full items-start px-2 py-2" data-toggle="task-5">
+                <div class="content-header bg-yellow-100 cursor-pointer w-full items-start px-2 py-2" data-toggle="my-work-task-5">
                   <div class="flex items-start justify-between">
-                    <div class="flex items-start gap-x-4">
+                    <div class="task-btn flex-grow flex items-start gap-x-4" data-toggle="my-work-task-5">
                       <div class="flex items-center gap-x-1">
                         <img src="images/icon-star.png" class="h-5 w-5" alt="">
                         <span id="task-points" class="w-6 text-black text-center text-xs">3</span>
@@ -4855,17 +4855,17 @@
                     </div>
                   </div>
                 </div>
-                <div class="answer text-sm lg:text-base" id="task-5" style="display: none;">
-                  <div class="bg-slate-100 w-full items-start text-left px-3.5 py-2.5 hover:bg-slate-200" data-toggle="task-5">
+                <div class="answer text-sm lg:text-base" id="my-work-task-5" style="display: none;">
+                  <div class="bg-slate-100 w-full items-start text-left px-3.5 py-2.5 hover:bg-slate-200" data-toggle="my-work-task-5">
                     <div class="main-edit-wrapper flex flex-col gap-y-3.5">
                       <section id="story-edit" class="flex items-start justify-between">
                         <div class="flex items-start flex-grow gap-x-4">
-                          <div class="flex items-center gap-x-1">
+                          <a href="#" data-target="my-work-task-5" class="save-and-collapse flex items-center gap-x-1">
                             <svg class="h-6 w-6 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                               <path stroke="none" d="M0 0h24v24H0z"/>
                               <polyline points="6 15 12 9 18 15" />
                             </svg>
-                          </div>
+                          </a>
                           <div class="flex flex-grow mr-4">
                             <textarea name="text" rows="1" class="w-full p-2 resize-none" oninput="this.style.height = ''; this.style.height = this.scrollHeight +'px'">Task 1 with some looooong text text text text</textarea>
                           </div>
@@ -4919,7 +4919,7 @@
                             </a>
                           </div>
                           <div>
-                            <a href="#" id="save-done-task-1" data-target="task-1" class="save-and-collapse flex items-center rounded bg-blue-500 shadow-sm text-xs text-white font-medium px-6 h-6">
+                            <a href="#" data-target="my-work-task-5" class="save-and-collapse flex items-center rounded bg-blue-500 shadow-sm text-xs text-white font-medium px-6 h-6">
                               Collapse
                             </a>
                           </div>
@@ -4938,8 +4938,8 @@
                                 </span>
 
                                 <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
-                                  <input type="checkbox" id="story-set-state" class="hidden absolute" data-dropdown-toggle>
-                                  <label for="story-set-state" class="flex items-center space-x-1 cursor-pointer">
+                                  <input type="checkbox" id="my-work-story-1-set-state" class="hidden absolute" data-dropdown-toggle>
+                                  <label for="my-work-story-1-set-state" class="flex items-center space-x-1 cursor-pointer">
                                     <span id="story-current-state" class="text-xs">Finished</span>
                                     <svg class="h-2 w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -4963,8 +4963,8 @@
                                 <p class="uppercase text-xs text-neutral-600">Reviews</p>
 
                                 <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
-                                  <input type="checkbox" id="story-review" class="hidden absolute" data-dropdown-toggle>
-                                  <label for="story-review" class="flex items-center space-x-1 cursor-pointer">
+                                  <input type="checkbox" id="my-work-story-1-review" class="hidden absolute" data-dropdown-toggle>
+                                  <label for="my-work-story-1-review" class="flex items-center space-x-1 cursor-pointer">
                                     <span id="story-current-state" class="text-xxs text-blue-600">+ add review</span>
                                   </label>
                                   <div id="reviewboxmenu" class="absolute mt-1 right-1 top-full min-w-max shadow rounded bg-white border border-stone-300 z-10 hidden" data-dropdown-content>
@@ -4988,8 +4988,8 @@
                                   <span class="flex items-center mr-2">
                                     <img src="images/icon-star.png" class="h-4 w-4" alt="">
                                   </span>
-                                  <input type="checkbox" id="story-type-edit" class="hidden absolute" data-dropdown-toggle>
-                                  <label for="story-type-edit" class="flex items-center space-x-1 cursor-pointer">
+                                  <input type="checkbox" id="my-work-story-1-type-edit" class="hidden absolute" data-dropdown-toggle>
+                                  <label for="my-work-story-1-type-edit" class="flex items-center space-x-1 cursor-pointer">
                                     <span id="story-type-state" class="text-xs">Feature</span>
                                     <svg class="h-2 w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -5038,8 +5038,8 @@
                               <div class="flex items-center justify-between h-full">
                                 <p class="uppercase text-xs text-neutral-600">Points</p>
                                 <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
-                                  <input type="checkbox" id="story-points-edit" class="hidden absolute" data-dropdown-toggle>
-                                  <label for="story-points-edit" class="flex items-center space-x-1 cursor-pointer">
+                                  <input type="checkbox" id="my-work-story-1-points-edit" class="hidden absolute" data-dropdown-toggle>
+                                  <label for="my-work-story-1-points-edit" class="flex items-center space-x-1 cursor-pointer">
                                     <span id="story-points-state" class="text-xs">2 points</span>
                                     <svg class="h-2 w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -5079,8 +5079,8 @@
                                   <span id="user-initials-1" class="flex items-center justify-center uppercase text-xs text-white h-6 w-6 rounded-full bg-zinc-400 mr-2">
                                     SV
                                   </span>
-                                  <input type="checkbox" id="story-requester-edit" class="hidden absolute" data-dropdown-toggle>
-                                  <label for="story-requester-edit" class="flex items-center space-x-1 cursor-pointer">
+                                  <input type="checkbox" id="my-work-story-1-requester-edit" class="hidden absolute" data-dropdown-toggle>
+                                  <label for="my-work-story-1-requester-edit" class="flex items-center space-x-1 cursor-pointer">
                                     <span id="story-requester-state" class="text-xs">SasaV</span>
                                     <svg class="h-2 w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -5132,8 +5132,8 @@
                                   <span id="user-initials-1" class="flex items-center justify-center uppercase text-xs text-white h-6 w-6 rounded-full bg-zinc-400 mr-2">
                                     am
                                   </span>
-                                  <input type="checkbox" id="story-owners-edit" class="hidden absolute" data-dropdown-toggle>
-                                  <label for="story-owners-edit" class="flex items-center space-x-1 cursor-pointer">
+                                  <input type="checkbox" id="my-work-story-1-owners-edit" class="hidden absolute" data-dropdown-toggle>
+                                  <label for="my-work-story-1-owners-edit" class="flex items-center space-x-1 cursor-pointer">
                                     <span id="story-owners-state" class="text-xs">Aleksandar M</span>
                                     <svg class="h-3 w-3 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                       <path stroke="none" d="M0 0h24v24H0z"/>
@@ -5256,8 +5256,8 @@
                               <input type="text" placeholder="Add a label" class="w-full leading-4 outline-none">
                             </div>
                             <div class="relative flex items-center justify-center ml-2" data-dropdown-trigger>
-                              <input type="checkbox" id="story-labels" class="hidden absolute" data-dropdown-toggle>
-                              <label for="story-labels" class="flex items-center cursor-pointer">
+                              <input type="checkbox" id="my-work-story-1-labels" class="hidden absolute" data-dropdown-toggle>
+                              <label for="my-work-story-1-labels" class="flex items-center cursor-pointer">
                                 <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                 </svg>
@@ -5324,22 +5324,22 @@
                             <p class="uppercase font-bold">Tasks (<span id="done-tasks">1</span>/<span id="tasks-count">3</span>)</p>
                           </div>
                           <div id="add-story-activity" class="bg-neutral-100 rounded border border-stone-300 mt-2">
-                            <div class="relative rounded mx-auto mt-2">
+                            <div class="activity relative rounded mx-auto mt-2">
                               <div class="absolute right-2 top-3">
                                 <a href="#" class="text-blue-500">Formating help</a>
                               </div>
                               <!-- Tabs -->
-                              <ul id="tabs" class="inline-flex pt-2 px-1 w-full border-b">
-                                <li class="bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px"><a id="default-tab" href="#first">Write</a></li>
-                                <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#second">Preview</a></li>
+                              <ul class="tabs inline-flex pt-2 px-1 w-full border-b">
+                                <li class="bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px"><a id="default-tab" href="#my-work-story-1-write">Write</a></li>
+                                <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#my-work-story-1-preview">Preview</a></li>
                               </ul>
 
                               <!-- Tab Contents -->
-                              <div id="tab-contents">
-                                <div id="first" class="p-4 bg-white">
+                              <div class="tab-contents">
+                                <div id="my-work-story-1-write" class="p-4 bg-white">
                                   write content
                                 </div>
-                                <div id="second" class="hidden p-4 bg-white">
+                                <div id="my-work-story-1-preview" class="hidden p-4 bg-white">
                                   preview content
                                 </div>
                                 <div id="activity-actions" class="p-4 bg-white">
