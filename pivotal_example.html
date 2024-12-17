@@ -4771,24 +4771,31 @@
         });
 
         // activity hendler(comments)
-        let tabsContainer = document.querySelector(".tabs");
+        let allTabsContainers = document.querySelectorAll('.tabs');
 
-        let tabTogglers = tabsContainer.querySelectorAll(".tabs a");
+        allTabsContainers.forEach(function(tabContainer) {
+          let tabTogglers = tabContainer.querySelectorAll('a');
+          
+          tabTogglers.forEach(function(toggler) {
+            toggler.addEventListener("click", function(e) {
+              e.preventDefault();
 
-        tabTogglers.forEach(function(toggler) {
-          toggler.addEventListener("click", function(e) {
-            e.preventDefault();
+              let tabNameShow = this.getAttribute("href");
+              
+              // Find the closest .activity container
+              let activityContainer = this.closest('.activity');
 
-            let tabNameShow = this.getAttribute("href");
-
-            this.closest('.tabs').querySelectorAll('li').forEach(function(li) {
-              if (e.target.parentElement == li) {
-                li.classList.add("border-t", "border-r", "border-l", "-mb-px", "bg-white");
-                li.closest('.activity').querySelector(tabNameShow).classList.remove("hidden");
-              } else {
-                let tabNameHide = li.firstChild.getAttribute("href");
-                li.classList.remove("border-t", "border-r", "border-l", "-mb-px", "bg-white");
-                li.closest('.activity').querySelector(tabNameHide).classList.add("hidden");
+              if (activityContainer) {
+                activityContainer.querySelectorAll('.tabs li').forEach(function(li) {
+                  if (e.target.parentElement == li) {
+                    li.classList.add("border-t", "border-r", "border-l", "-mb-px", "bg-white");
+                    li.closest('.activity').querySelector(tabNameShow).classList.remove("hidden");
+                  } else {
+                    let tabNameHide = li.firstChild.getAttribute("href");
+                    li.classList.remove("border-t", "border-r", "border-l", "-mb-px", "bg-white");
+                    li.closest('.activity').querySelector(tabNameHide).classList.add("hidden");
+                  }
+                });
               }
             });
           });
