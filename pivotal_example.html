@@ -3100,28 +3100,28 @@
                   </div>
                 </div> <!-- END item 1 -->
 
-                <!-- item 2 -->
+                <!-- epic item 2 -->
                 <div class="content-wrapper bg-stone-200 w-full items-start text-left border-b border-stone-400">
-                  <div class="flex justify-between pl-3.5 text-xs">
-                    <div class="flex flex-col py-2 justify-between">
-                      <p id="epic-name-1" class="leading-5 mb-3">Epic name 2</p>
-                      <div id="epic-progress-1" class="flex min-w-28 h-2">
+                  <div class="content-header flex justify-between pl-3.5 text-xs">
+                    <div id="" class="task-btn flex-grow flex flex-col py-2 justify-between cursor-pointer" data-toggle="epic-story-2">
+                      <p id="epic-name-2" class="leading-5 mb-3">Epic name 2</p>
+                      <div id="epic-progress-1" class="flex min-w-28 max-w-56 h-2">
                         <span class="accepted-epic h-full bg-lime-600 w-[40%]"></span>
                         <span class="active-epic h-full bg-yellow-200 w-[20%]"></span>
-                        <span class="unstarted-epic h-full bg-neutral-400 w-[15%]"></span>
-                        <span class="unscheduled-epic h-full bg-slate-400 w-[25%]"></span>
+                        <span class="unstarted-epic h-full bg-neutral-400 w-[0%]"></span>
+                        <span class="unscheduled-epic h-full bg-slate-400 w-[0%]"></span>
                       </div>
                     </div>
 
                     <div class="flex items-start py-2 w-6 bg-stone-300">
-                      <a href="#" class="flex items-center h-full">
+                      <a href="#epic_name-2-tasks" class="epic-tasks flex items-center h-full">
                         <svg class="h-4 w-4 text-zinc-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <polyline points="9 18 15 12 9 6" />
                         </svg>
                       </a>
                     </div>
                   </div>
-                </div> <!-- END item 2 -->
+                </div> <!-- END epic item 2 -->
               </div>
             </div>
           </div> <!-- end epics column -->
@@ -4811,6 +4811,28 @@
                   </div>
                 </div>
                 <!-- END FOR Icebox STORIES -->
+              </div>
+            </div>
+          </div> <!-- END first epic tasks column -->
+          <!-- this is just to show orderof tasks- here will be next epic tasks column and so on -->
+          <div id="epic_name-2-tasks" class="item-col flex-shrink-0 flex-grow min-w-96 max-w-screen-xl overflow-y-auto hidden">
+            <div id="header" class="flex justify-between items-center rounded-t h-11 bg-violet-950">
+              <div class="flex pl-3.5 pr-2.5">
+                <h2 class="text-base text-white">Epic name 2</h2>
+              </div>
+              <div class="flex items-center gap-x-2.5 px-2">
+                <a href="#" class="flex items-center gap-x-2">
+                  <svg  viewBox="0 0 24 24" class="h-6 w-6 text-gray-300" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                  <span class="text-base text-white">Add Story</span>
+                </a>
+                <a href="#epic_name-2-tasks" class="close-column h-7 w-7 text-gray-300">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
